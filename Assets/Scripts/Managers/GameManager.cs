@@ -1,11 +1,33 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set; }
+
     [SerializeField] private float levelSpeed = 2f;
-    void Update()
+
+    private void Awake()
     {
-        //Camera.main.transform.position = new Vector3(Camera.main.transform.position.x+1f, Camera.main.transform.position.y, Camera.main.transform.position.z);
+        if (Instance != null && Instance != this)
+            Destroy(this.gameObject);
+        else
+            Instance = this;
+    }
+
+    private void Update()
+    {
         Camera.main.transform.position += new Vector3(levelSpeed * Time.deltaTime, 0, 0);   
+    }
+
+    public void GameOver()
+    {
+        //Debug.Log("Game Over");
+        RestartGame();
+    }
+
+    private void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

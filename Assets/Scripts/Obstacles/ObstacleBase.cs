@@ -7,7 +7,7 @@ public class ObstacleBase : MonoBehaviour //If col is trigger is perticide other
     {
         if (collision.gameObject.TryGetComponent<BeeController>(out var bee))
         {
-            Debug.Log($"GameOver");
+            GameManager.Instance.GameOver();
         }
     }
 

@@ -2,29 +2,43 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine.UI;
 
 public class BeeController : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float rotSpeed = 0.2f;
-    [SerializeField] private float rotAngle = 40f;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private GameObject beeBody;
     [SerializeField] private InputActionAsset inputActions;
+    private InputAction moveAction;
+    private Vector2 moveInput;
+
 
     [Header("Bounce")]
     [SerializeField] private float bounceForce = 10f;
     [SerializeField] private float bounceDuration = 0.2f;
-
     private bool isBouncing = false;
-    private Vector2 moveInput;
-    private InputAction moveAction;
+
+
+    [Header("Ressources")]
+    [SerializeField] private int energyDecreasePerSecond = 5;
+    [SerializeField] private int energyGivenFromNectar = 25;
+    [SerializeField] private Image energyBar;
+    [SerializeField] private Image energyBarSlow;
+    private Tween energyBarFillTween = null;
+    private int energy = 100;
+    private int nectarStock = 0;
+
 
     void Awake()
     {
         inputActions.FindActionMap("Player").Enable();
         moveAction = inputActions.FindAction("Move");
+
+        energyBar.fillAmount = 100;
+        energyBarSlow.fillAmount = 100;
     }
 
     void FixedUpdate()
@@ -37,13 +51,38 @@ public class BeeController : MonoBehaviour
             {
                 rb.AddForce(moveInput * moveSpeed, ForceMode2D.Force);
 
-                // Rotate the bee based on the vertical input
-                // float targetZRotation = moveInput.y * rotAngle;
-                // beeBody.transform.DOLocalRotate(new Vector3(0, 0, 90 + targetZRotation), rotSpeed);
+                float angle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg;
+                beeBody.transform.DOLocalRotate(new Vector3(0, 0, angle - 90), rotSpeed);
             }
         }
 
         ClampMovements();
+
+        if (Time.fixedTime % 1f < Time.fixedDeltaTime) // every 1 second, decrease energy
+        {
+            energy -= energyDecreasePerSecond;
+            energyBar.fillAmount = (float)energy / 100;
+            energyBarFillTween = energyBarSlow.DOFillAmount((float)energy / 100, 1f).SetEase(Ease.Linear);
+
+            if (energy <= 0)
+                GameManager.Instance.GameOver();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Nectar")
+        {
+            Destroy(collision.gameObject);
+            nectarStock++;
+
+            energyBarFillTween?.Kill();
+            energy = Mathf.Min(energy + energyGivenFromNectar, 100);
+
+            float energyPercent = (float)energy / 100f;
+            energyBar.fillAmount = energyPercent;
+            energyBarSlow.fillAmount = energyPercent;
+        }
     }
 
     void OnDisable()
@@ -72,29 +111,18 @@ public class BeeController : MonoBehaviour
     public void TakeBounce(Vector2 direction)
     {
         if (isBouncing) return;
-        
         StartCoroutine(BounceCoroutine(direction));
     }
 
     private IEnumerator BounceCoroutine(Vector2 direction)
     {
         isBouncing = true;
-        moveInput = Vector2.zero;
-        //rb.constraints = RigidbodyConstraints2D.None;
-
-        rb.linearVelocity = Vector2.zero;
         rb.AddForce(direction.normalized * bounceForce, ForceMode2D.Impulse);
         beeBody.transform.DOShakePosition(bounceDuration, 0.3f, 10, 90, false, true);
 
         yield return new WaitForSeconds(bounceDuration);
 
         isBouncing = false;
-        
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        yield return beeBody.transform.DOLocalRotate(new Vector3(0, 0, 90), rotSpeed / 3).WaitForCompletion();
-        
-        //rb.constraints = RigidbodyConstraints2D.None;
-
     }
 
     #endregion
