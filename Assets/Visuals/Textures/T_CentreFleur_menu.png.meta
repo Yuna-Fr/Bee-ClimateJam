@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2480fab845d518f438bca87646e5645c
+guid: 9496fd3d887891648b0bb9c00cf205cf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4226034006515963765
-    second: T_PlaceholderLeaf 1_0
+      213: -5768834043990779934
+    second: T_CentreFleur_menu_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: T_PlaceholderLeaf 1_0
+      name: T_CentreFleur_menu_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 65
-        width: 656
-        height: 1987
+        x: 114
+        y: 126
+        width: 898
+        height: 915
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b8825e8267c1a55c0800000000000000
-      internalID: -4226034006515963765
+      spriteID: 2e7dfb7600cf0ffa0800000000000000
+      internalID: -5768834043990779934
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      T_PlaceholderLeaf 1_0: -4226034006515963765
+      T_CentreFleur_menu_0: -5768834043990779934
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
