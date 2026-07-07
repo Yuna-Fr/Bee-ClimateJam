@@ -30,6 +30,7 @@ public class BeeController : MonoBehaviour
     private Tween energyBarFillTween = null;
     private int energy = 100;
     private int nectarStock = 0;
+    private int pollinatedFlowersScore = 0;
 
 
     void Awake()
@@ -61,27 +62,25 @@ public class BeeController : MonoBehaviour
         if (Time.fixedTime % 1f < Time.fixedDeltaTime) // every 1 second, decrease energy
         {
             energy -= energyDecreasePerSecond;
-            energyBar.fillAmount = (float)energy / 100;
-            energyBarFillTween = energyBarSlow.DOFillAmount((float)energy / 100, 1f).SetEase(Ease.Linear);
-
-            if (energy <= 0)
-                GameManager.Instance.GameOver();
+            UpdateEnergyBar();
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Nectar")
+        if (collision.gameObject.CompareTag("Nectar"))
         {
             Destroy(collision.gameObject);
-            nectarStock++;
-
-            energyBarFillTween?.Kill();
-            energy = Mathf.Min(energy + energyGivenFromNectar, 100);
-
-            float energyPercent = (float)energy / 100f;
-            energyBar.fillAmount = energyPercent;
-            energyBarSlow.fillAmount = energyPercent;
+            RecoltNectar();
+        }
+        else if (collision.gameObject.CompareTag("Flower"))
+        {
+            var flower = collision.gameObject.GetComponent<Flower>();
+            if (!flower.isPollinated)
+            {
+                pollinatedFlowersScore++;
+                flower.Pollinate();
+            }
         }
     }
 
@@ -91,7 +90,6 @@ public class BeeController : MonoBehaviour
     }
 
     #region Movements & Physics
-
     private void ClampMovements() // Clamp the bee's position to screen bounds
     {
         if (transform.position.y >= Camera.main.ScreenToWorldPoint(new(0, Screen.height, 0)).y)
@@ -123,6 +121,26 @@ public class BeeController : MonoBehaviour
         yield return new WaitForSeconds(bounceDuration);
 
         isBouncing = false;
+    }
+    #endregion
+
+    #region Energy Management
+
+    private void UpdateEnergyBar()
+    {
+        float energyPercent = (float)energy / 100f;
+        energyBar.fillAmount = energyPercent;
+        energyBarSlow.fillAmount = energyPercent;
+    }
+
+    private void RecoltNectar()
+    {
+        nectarStock++;
+
+        energyBarFillTween?.Kill();
+        energy = Mathf.Min(energy + energyGivenFromNectar, 100);
+
+        UpdateEnergyBar();
     }
 
     #endregion

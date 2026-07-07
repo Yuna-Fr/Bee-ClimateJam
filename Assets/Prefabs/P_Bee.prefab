@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 8706352293513933444}
   - component: {fileID: 8978026884381442524}
   m_Layer: 0
-  m_Name: Bee
+  m_Name: P_Bee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
