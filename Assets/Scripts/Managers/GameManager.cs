@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,7 +6,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    [Header("Level")]
     [SerializeField] private float levelSpeed = 2f;
+
+    [Header("GameOver")]
+    [SerializeField] private float gameOverFade = 2f;
+    [SerializeField] private CanvasGroup gameoverScreen;
+
+    private bool stopLevel = false;
 
     private void Awake()
     {
@@ -17,13 +25,16 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (stopLevel) return;
+
         Camera.main.transform.position += new Vector3(levelSpeed * Time.deltaTime, 0, 0);   
     }
 
     public void GameOver()
     {
-        //Debug.Log("Game Over");
-        RestartGame();
+        stopLevel = true;
+        BeeController.Instance.DiesAnim(1f);
+        gameoverScreen.DOFade(1f, gameOverFade);
     }
 
     private void RestartGame()

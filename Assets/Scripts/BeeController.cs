@@ -3,9 +3,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEngine.UI;
+using TMPro;
 
 public class BeeController : MonoBehaviour
 {
+    public static BeeController Instance { get; private set; }
+
+
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float rotSpeed = 0.2f;
@@ -27,19 +31,23 @@ public class BeeController : MonoBehaviour
     [SerializeField] private int energyGivenFromNectar = 25;
     [SerializeField] private Image energyBar;
     [SerializeField] private Image energyBarSlow;
+    [SerializeField] private TextMeshProUGUI score;
     private Tween energyBarFillTween = null;
     private int energy = 100;
     private int nectarStock = 0;
     private int pollinatedFlowersScore = 0;
 
-    #region Core Unity Methods
+    #region Base Unity Methods
     void Awake()
     {
+        Instance = this;
+
         inputActions.FindActionMap("Player").Enable();
         moveAction = inputActions.FindAction("Move");
 
         energyBar.fillAmount = 100;
         energyBarSlow.fillAmount = 100;
+        score.text = pollinatedFlowersScore.ToString();
     }
 
     void FixedUpdate()
@@ -76,10 +84,15 @@ public class BeeController : MonoBehaviour
         else if (collision.gameObject.CompareTag("Flower"))
         {
             var flower = collision.gameObject.GetComponent<Flower>();
-            if (!flower.isPollinated)
+            if (!flower.isPollinated && nectarStock > 0)
             {
-                pollinatedFlowersScore++;
+                nectarStock--;
                 flower.Pollinate();
+                pollinatedFlowersScore++;
+                score.text = pollinatedFlowersScore.ToString();
+                var parentUI = score.transform.parent.transform;
+                parentUI.DOPunchScale(Vector3.one * 0.1f, 0.5f, 5, 1);
+                parentUI.DORotate(new Vector3(0, 0, 360), 0.5f, RotateMode.LocalAxisAdd).SetEase(Ease.OutBack);
             }
         }
     }
@@ -89,6 +102,12 @@ public class BeeController : MonoBehaviour
         inputActions.FindActionMap("Player").Disable();
     }
     #endregion
+
+    public void DiesAnim(float duration)
+    {
+        beeBody.transform.DOShakePosition(duration, 0.5f, 8, 90, false, true);
+        beeBody.transform.DOScale(Vector3.zero, duration);
+    }
 
     #region Movements & Physics
     private void ClampMovements() // Clamp the bee's position to screen bounds
@@ -131,7 +150,10 @@ public class BeeController : MonoBehaviour
     {
         float energyPercent = (float)energy / 100f;
         energyBar.fillAmount = energyPercent;
-        energyBarSlow.fillAmount = energyPercent;
+        energyBarFillTween = energyBarSlow.DOFillAmount(energyPercent, 1f).SetEase(Ease.Linear);
+
+        if (energy <= 0)
+            GameManager.Instance.GameOver();
     }
 
     private void RecoltNectar()
@@ -143,6 +165,5 @@ public class BeeController : MonoBehaviour
 
         UpdateEnergyBar();
     }
-
     #endregion
 }
