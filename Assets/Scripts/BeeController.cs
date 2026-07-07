@@ -32,7 +32,7 @@ public class BeeController : MonoBehaviour
     private int nectarStock = 0;
     private int pollinatedFlowersScore = 0;
 
-
+    #region Core Unity Methods
     void Awake()
     {
         inputActions.FindActionMap("Player").Enable();
@@ -88,6 +88,7 @@ public class BeeController : MonoBehaviour
     {
         inputActions.FindActionMap("Player").Disable();
     }
+    #endregion
 
     #region Movements & Physics
     private void ClampMovements() // Clamp the bee's position to screen bounds

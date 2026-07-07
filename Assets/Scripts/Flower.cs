@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Flower : MonoBehaviour
 {
-    public bool isPollinated = false;
-
+    [HideInInspector] public bool isPollinated = false;
+    
     [SerializeField] private List<Transform> flowerBabies;
     [SerializeField] private Vector2 babySpawnRate = new(0.2f, 0.7f);
 
@@ -23,8 +23,6 @@ public class Flower : MonoBehaviour
 
     public void Pollinate()
     {
-        if (isPollinated) return;
-
         isPollinated = true;
         StartCoroutine(PollinationAnimation());
     }

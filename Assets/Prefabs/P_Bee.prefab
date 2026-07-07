@@ -79,7 +79,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 0.9210965, b: 0.12803233, a: 1}
@@ -146,6 +146,10 @@ MonoBehaviour:
   inputActions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   bounceForce: 10
   bounceDuration: 0.2
+  energyDecreasePerSecond: 5
+  energyGivenFromNectar: 25
+  energyBar: {fileID: 0}
+  energyBarSlow: {fileID: 0}
 --- !u!50 &8706352293513933444
 Rigidbody2D:
   serializedVersion: 5

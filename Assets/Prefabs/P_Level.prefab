@@ -284,15 +284,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7760092883070221810, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.8
+      value: 7.26
       objectReference: {fileID: 0}
     - target: {fileID: 7760092883070221810, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.269989
+      value: 7.29
       objectReference: {fileID: 0}
     - target: {fileID: 7760092883070221810, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.24427795
+      value: 1.45
       objectReference: {fileID: 0}
     - target: {fileID: 7760092883070221810, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -473,6 +473,18 @@ PrefabInstance:
       value: PesticideZone
       objectReference: {fileID: 0}
     - target: {fileID: 5133776180346362610, guid: 446010443c981f947b845f7d7147d064, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133776180346362610, guid: 446010443c981f947b845f7d7147d064, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133776180346362610, guid: 446010443c981f947b845f7d7147d064, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133776180346362610, guid: 446010443c981f947b845f7d7147d064, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.307404
       objectReference: {fileID: 0}
@@ -510,6 +522,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5133776180346362610, guid: 446010443c981f947b845f7d7147d064, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5133776180346362610, guid: 446010443c981f947b845f7d7147d064, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
