@@ -34,7 +34,8 @@ public class GameManager : MonoBehaviour
     {
         stopLevel = true;
         BeeController.Instance.DiesAnim(1f);
-        gameoverScreen.DOFade(1f, gameOverFade);
+        gameoverScreen.DOFade(1f, gameOverFade)
+            .onComplete += () => gameoverScreen.gameObject.GetComponent<GameOverUI>().LaunchGameOverUI() ;
     }
 
     private void RestartGame()
