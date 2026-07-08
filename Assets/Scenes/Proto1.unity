@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d8093c29d934b44974183450082608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  levelSpeed: 3.5
+  levelSpeed: 2
   gameOverFade: 1.5
   gameoverScreen: {fileID: 1080428482}
 --- !u!4 &918647889

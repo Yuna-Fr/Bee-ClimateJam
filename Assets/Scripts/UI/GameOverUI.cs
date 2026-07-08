@@ -1,32 +1,47 @@
+using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Animator))]
 public class GameOverUI : MonoBehaviour
 {
-    [SerializeField] private Animator button1;
-    [SerializeField] private Animator button2;
+    [SerializeField] private Animator flowerAnim;
+    [SerializeField] private GameObject petal1;
+    [SerializeField] private GameObject petal2;
     [SerializeField] private GameObject flower;
     
     private void Start()
     {
-        button1.gameObject.SetActive(false);
-        button2.gameObject.SetActive(false);
-        flower.SetActive(true);
+        flower.SetActive(false);
+        petal1.SetActive(false);
+        petal2.SetActive(false);
     }
 
     public void LaunchGameOverUI()
     {
-        Animator flowerAnimator = GetComponent<Animator>();
+        flower.SetActive(true);
+        petal1.SetActive(true);
+        petal2.SetActive(true);
 
-        button1.gameObject.SetActive(true);
-        button2.gameObject.SetActive(true);
-
-        //flowerAnimator.speed = 0.3f;
-        button1.speed = 0.4f;
-        button2.speed = 0.2f;
+        flowerAnim.speed = 0.5f;
         
-        flowerAnimator.Play("GameOver_Flower");
-        button1.Play("GameOver_Petals");
-        button2.Play("GameOver_Petals_2");
+        flowerAnim.Rebind();
+        flowerAnim.Update(0f); 
+        flowerAnim.Play("GameOver_Flower");
+
     }
+
+    #region Buttons Callback
+
+    public void OnRestart()
+    {
+        GameManager.Instance.RestartGame();
+    }
+
+    public void OnMenu()
+    {
+        GameManager.Instance.LoadMenu();
+    }
+
+    #endregion
 }
