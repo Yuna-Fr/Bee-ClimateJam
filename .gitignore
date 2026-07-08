@@ -47,7 +47,6 @@
 
 # NuGet Packages
 *.nupkg
-**/[Pp]ackages/*
 !**/[Pp]ackages/build/
 
 # .NET build artifacts
@@ -98,6 +97,7 @@ playground.xcworkspace
 *.csproj
 *.unityproj
 *.sln
+*.slnx
 *.suo
 
 ### Windows
@@ -138,7 +138,6 @@ x86/
 
 # NuGet
 *.nupkg
-**/[Pp]ackages/*
 !**/[Pp]ackages/build/
 *.nuget.props
 *.nuget.targets
@@ -149,13 +148,10 @@ x86/
 ### VS Code
 # VSCode settings (keep shared configuration)
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 
 # Local History for Visual Studio Code
 .history/
 
 # Built Visual Studio Code Extensions
 *.vsix
+Assets/Plugins/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
