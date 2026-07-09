@@ -119,16 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &320568574 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7076472859822839379, guid: 7259f3c192e434349b1f2e4586803998, type: 3}
-  m_PrefabInstance: {fileID: 2241115034576101162}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &484070132 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 532417878330527253, guid: 7259f3c192e434349b1f2e4586803998, type: 3}
-  m_PrefabInstance: {fileID: 2241115034576101162}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,26 +584,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LEVEL
       objectReference: {fileID: 0}
-    - target: {fileID: 875542337446492019, guid: 7259f3c192e434349b1f2e4586803998, type: 3}
-      propertyPath: isPatroller
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 875542337446492019, guid: 7259f3c192e434349b1f2e4586803998, type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 875542337446492019, guid: 7259f3c192e434349b1f2e4586803998, type: 3}
-      propertyPath: 'patrolPoints.Array.data[0]'
-      value: 
-      objectReference: {fileID: 484070132}
-    - target: {fileID: 875542337446492019, guid: 7259f3c192e434349b1f2e4586803998, type: 3}
-      propertyPath: 'patrolPoints.Array.data[1]'
-      value: 
-      objectReference: {fileID: 320568574}
-    - target: {fileID: 1909706868423672321, guid: 7259f3c192e434349b1f2e4586803998, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2139109331729425226, guid: 7259f3c192e434349b1f2e4586803998, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -653,18 +623,6 @@ PrefabInstance:
     - target: {fileID: 2139109331729425226, guid: 7259f3c192e434349b1f2e4586803998, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4903212354932707358, guid: 7259f3c192e434349b1f2e4586803998, type: 3}
-      propertyPath: chaseDuration
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4903212354932707358, guid: 7259f3c192e434349b1f2e4586803998, type: 3}
-      propertyPath: rotationSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4903212354932707358, guid: 7259f3c192e434349b1f2e4586803998, type: 3}
-      propertyPath: detectionRadius
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
