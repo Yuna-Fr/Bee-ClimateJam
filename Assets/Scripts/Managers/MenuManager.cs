@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private float moveDuration = 0.2f;
     [SerializeField] private Vector3 leafUpPos;
     [SerializeField] private GameObject creditLeaf;
+    [SerializeField] private Image logo;
 
     private Vector3 leafDownPos;
     private bool isCreditOpen = false;
@@ -55,11 +57,13 @@ public class MenuManager : MonoBehaviour
 
     private void OnCreditOpened()
     {
+        logo.DOFade(0f, moveDuration*2 );
         creditLeaf.transform.DOLocalRotate(leafUpPos, moveDuration);
     }
 
     private void OnCreditClosed()
     {
+        logo.DOFade(1f, moveDuration*2 );
         creditLeaf.transform.DOLocalRotate(leafDownPos, moveDuration);
     }
 }
