@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6389174155198668358}
   - component: {fileID: 5224406443184912075}
   - component: {fileID: 1151064639843554399}
+  - component: {fileID: 2658555476787028741}
   m_Layer: 0
   m_Name: P_Hornet
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6617829999266677773}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.35673797, w: 0.9342045}
+  m_LocalRotation: {x: 0, y: 0, z: 0.35673797, w: 0.9342045}
   m_LocalPosition: {x: 13.65741, y: -4.369995, z: 0}
   m_LocalScale: {x: 0.79999995, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
@@ -46,6 +47,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a09027fab1dda4cb061d4292a0af05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  detectionRadius: 6
+  chaseDuration: 4
+  rotationSpeed: 8
+  isPatroller: 0
+  patrolWaitTime: 1
+  patrolPoints: []
 --- !u!212 &5224406443184912075
 SpriteRenderer:
   serializedVersion: 3
@@ -152,3 +159,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!195 &2658555476787028741
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6617829999266677773}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.3
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.3
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
