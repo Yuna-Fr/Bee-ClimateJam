@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float gameOverFade = 2f;
     [SerializeField] private CanvasGroup gameoverScreen;
 
+    [Header("Victory")]
+    [SerializeField] private CanvasGroup victoryScreen;
+
     private bool stopLevel = false;
 
     private void Awake()
@@ -34,7 +37,17 @@ public class GameManager : MonoBehaviour
     {
         stopLevel = true;
         BeeController.Instance.DiesAnim(1f);
-        gameoverScreen.DOFade(1f, gameOverFade);
+        if (gameoverScreen != null)
+            gameoverScreen.DOFade(1f, gameOverFade);
+    }
+
+    public void Victory()
+    {
+        stopLevel = true;
+        if (victoryScreen != null)
+            victoryScreen.DOFade(1f, gameOverFade);
+        else if (gameoverScreen != null)
+            gameoverScreen.DOFade(0.5f, gameOverFade);
     }
 
     private void RestartGame()
