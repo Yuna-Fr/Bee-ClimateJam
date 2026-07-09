@@ -1401,7 +1401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c2f88bf97f7714a9fb39a9d8afab63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuManager
-  sceneName: Proto1
+  sceneName: Level_01_Forest
   changeSceneDelay: 0.3
   moveDuration: 0.7
   leafUpPos: {x: 25.238323, y: 359.92334, z: 332.41116}
