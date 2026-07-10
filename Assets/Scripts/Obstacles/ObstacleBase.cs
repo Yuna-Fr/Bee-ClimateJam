@@ -6,17 +6,18 @@ public class ObstacleBase : MonoBehaviour //If col is trigger is perticide other
     private void OnTriggerEnter2D(Collider2D collision) 
     {
         if (collision.gameObject.TryGetComponent<BeeController>(out var bee))
-        {
-            GameManager.Instance.GameOver();
-        }
+            OnTriggerReaction(bee);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent<BeeController>(out var bee))
-        {
             OnCollisonReaction(bee);
-        }
+    }
+
+    protected virtual void OnTriggerReaction(BeeController bee)
+    {
+        GameManager.Instance.GameOver();
     }
 
     protected virtual void OnCollisonReaction(BeeController bee)

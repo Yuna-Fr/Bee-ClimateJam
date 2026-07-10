@@ -13,9 +13,9 @@ public class BeeController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float rotSpeed = 0.2f;
-    [SerializeField] private Rigidbody2D rb;
     [SerializeField] private GameObject beeBody;
     [SerializeField] private InputActionAsset inputActions;
+    public Rigidbody2D rb;
     private InputAction moveAction;
     private Vector2 moveInput;
 
@@ -89,6 +89,7 @@ public class BeeController : MonoBehaviour
                 nectarStock--;
                 flower.Pollinate();
                 pollinatedFlowersScore++;
+                
                 score.text = pollinatedFlowersScore.ToString();
                 var parentUI = score.transform.parent.transform;
                 parentUI.DOPunchScale(Vector3.one * 0.1f, 0.5f, 5, 1);
