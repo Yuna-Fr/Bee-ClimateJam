@@ -13,7 +13,7 @@ public class BeeController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float rotSpeed = 0.2f;
-    [SerializeField] private Rigidbody2D rb;
+    public Rigidbody2D rb;
     [SerializeField] private GameObject beeBody;
     [SerializeField] private InputActionAsset inputActions;
     private InputAction moveAction;
