@@ -33,6 +33,9 @@ public class Flower : MonoBehaviour
         {
             flowerBaby.localScale = Vector3.zero;
             flowerBaby.gameObject.SetActive(true);
+            float spinAxis = Random.value > 0.5f ? 90f : -90f;
+            
+            flowerBaby.DOLocalRotate(new Vector3(0, 0, spinAxis), 1f, RotateMode.FastBeyond360).SetRelative().SetEase(Ease.OutQuad);
             flowerBaby.DOScale(babiesSizes[flowerBabies.IndexOf(flowerBaby)], 1f).SetEase(Ease.OutBack);
 
             yield return new WaitForSeconds(Random.Range(babySpawnRate.x, babySpawnRate.y));

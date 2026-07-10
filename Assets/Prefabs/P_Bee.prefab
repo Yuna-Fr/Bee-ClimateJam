@@ -164,11 +164,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BeeController
   moveSpeed: 60
   rotSpeed: 0.3
-  rb: {fileID: 8706352293513933444}
   beeBody: {fileID: 1970698150303623363}
   inputActions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  rb: {fileID: 8706352293513933444}
   bounceForce: 10
   bounceDuration: 0.2
+  spriteRenderer: {fileID: 7646889538939507701}
   energyDecreasePerSecond: 5
   energyGivenFromNectar: 25
   energyBar: {fileID: 0}

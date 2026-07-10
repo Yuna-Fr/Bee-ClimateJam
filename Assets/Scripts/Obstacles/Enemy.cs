@@ -96,7 +96,8 @@ public class Enemy : ObstacleBase
     protected override void OnCollisonReaction(BeeController bee)
     {
         base.OnCollisonReaction(bee);
-        GameManager.Instance.GameOver();
+        bee.HitFeedback();
+        GameManager.Instance.RemoveAHeart();
     }
 
     #region Patrol Logic
