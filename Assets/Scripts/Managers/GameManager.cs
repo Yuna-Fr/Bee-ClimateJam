@@ -1,6 +1,8 @@
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +10,10 @@ public class GameManager : MonoBehaviour
 
     [Header("Level")]
     [SerializeField] private float levelSpeed = 2f;
+
+    [Header("Difficulty")]
+    [SerializeField] private List<Image> hearts = new();
+    [SerializeField] private Sprite deadHeart;
 
     [Header("GameOver")]
     [SerializeField] private float gameOverFade = 2f;
@@ -17,6 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CanvasGroup victoryScreen;
 
     private bool stopLevel = false;
+    private int currentLife = 0;
 
     private void Awake()
     {
@@ -24,6 +31,8 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         else
             Instance = this;
+
+        currentLife = hearts.Count;
     }
 
     private void Update()
@@ -33,12 +42,15 @@ public class GameManager : MonoBehaviour
         Camera.main.transform.position += new Vector3(levelSpeed * Time.deltaTime, 0, 0);   
     }
 
-    public void GameOver()
+    public void RemoveAHeart()
     {
-        stopLevel = true;
-        BeeController.Instance.DiesAnim(1f);
-        gameoverScreen.DOFade(1f, gameOverFade)
-            .onComplete += () => gameoverScreen.gameObject.GetComponent<GameOverUI>().LaunchGameOverUI() ;
+        if (currentLife <= 0) return; // Already dead
+
+        hearts[(currentLife-1)].sprite = deadHeart;
+        currentLife--;
+
+        if (currentLife <= 0)
+            GameOver();
     }
 
     public void Victory()
@@ -50,6 +62,15 @@ public class GameManager : MonoBehaviour
             gameoverScreen.DOFade(0.5f, gameOverFade);
     }
 
+    private void GameOver()
+    {
+        stopLevel = true;
+        BeeController.Instance.DiesAnim(1f);
+        gameoverScreen.DOFade(1f, gameOverFade)
+            .onComplete += () => gameoverScreen.gameObject.GetComponent<GameOverUI>().LaunchGameOverUI();
+    }
+
+    #region GameOver Buttons Callbacks
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -59,4 +80,5 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+    #endregion
 }

@@ -23,6 +23,7 @@ public class BeeController : MonoBehaviour
     [Header("Bounce")]
     [SerializeField] private float bounceForce = 10f;
     [SerializeField] private float bounceDuration = 0.2f;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     private bool isBouncing = false;
 
 
@@ -36,6 +37,7 @@ public class BeeController : MonoBehaviour
     private int energy = 100;
     private int nectarStock = 0;
     private int pollinatedFlowersScore = 0;
+
 
     #region Base Unity Methods
     void Awake()
@@ -104,11 +106,19 @@ public class BeeController : MonoBehaviour
     }
     #endregion
 
+    #region Feedbacks
+    public void HitFeedback()
+    {
+        spriteRenderer.DOColor(Color.red, 0.15f)
+            .OnComplete(() => spriteRenderer.DOColor(Color.white, 0.15f));
+    }
+
     public void DiesAnim(float duration)
     {
         beeBody.transform.DOShakePosition(duration, 0.5f, 8, 90, false, true);
         beeBody.transform.DOScale(Vector3.zero, duration);
     }
+    #endregion
 
     #region Movements & Physics
     private void ClampMovements() // Clamp the bee's position to screen bounds
@@ -154,7 +164,10 @@ public class BeeController : MonoBehaviour
         energyBarFillTween = energyBarSlow.DOFillAmount(energyPercent, 1f).SetEase(Ease.Linear);
 
         if (energy <= 0)
-            GameManager.Instance.GameOver();
+        {
+            HitFeedback();
+            GameManager.Instance.RemoveAHeart();
+        }
     }
 
     private void RecoltNectar()
