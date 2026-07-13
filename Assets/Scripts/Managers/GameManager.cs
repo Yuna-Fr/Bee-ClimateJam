@@ -33,6 +33,9 @@ public class GameManager : MonoBehaviour
             Instance = this;
 
         currentLife = hearts.Count;
+
+        gameoverScreen.gameObject.SetActive(false);
+        victoryScreen.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -55,15 +58,19 @@ public class GameManager : MonoBehaviour
 
     public void Victory()
     {
+        victoryScreen.gameObject.SetActive(true);
+
         stopLevel = true;
-        if (victoryScreen != null)
-            victoryScreen.DOFade(1f, gameOverFade);
-        else if (gameoverScreen != null)
-            gameoverScreen.DOFade(0.5f, gameOverFade);
+        if (victoryScreen == null) return;
+
+        victoryScreen.DOFade(1f, gameOverFade)
+            .onComplete += () => victoryScreen.gameObject.GetComponent<VicrotyUI>().LaunchUI();
     }
 
     private void GameOver()
     {
+        gameoverScreen.gameObject.SetActive(true);
+
         stopLevel = true;
         BeeController.Instance.DiesAnim(1f);
         gameoverScreen.DOFade(1f, gameOverFade)
