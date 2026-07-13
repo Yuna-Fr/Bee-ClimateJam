@@ -56,10 +56,10 @@ public class GameManager : MonoBehaviour
     public void Victory()
     {
         stopLevel = true;
-        if (victoryScreen != null)
-            victoryScreen.DOFade(1f, gameOverFade);
-        else if (gameoverScreen != null)
-            gameoverScreen.DOFade(0.5f, gameOverFade);
+        if (victoryScreen == null) return;
+
+        victoryScreen.DOFade(1f, gameOverFade)
+            .onComplete += () => victoryScreen.gameObject.GetComponent<VicrotyUI>().LaunchUI();
     }
 
     private void GameOver()
