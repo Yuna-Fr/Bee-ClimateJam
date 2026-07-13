@@ -82224,8 +82224,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 2241115034576101163}
     m_Modifications:
     - target: {fileID: 5680744978769708034, guid: f5cbfba141f9cc24089ac30c0cdf838b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.419
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680744978769708034, guid: f5cbfba141f9cc24089ac30c0cdf838b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.9
+      value: 3.6095
       objectReference: {fileID: 0}
     - target: {fileID: 5680744978769708034, guid: f5cbfba141f9cc24089ac30c0cdf838b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -82262,6 +82266,14 @@ PrefabInstance:
     - target: {fileID: 5680744978769708034, guid: f5cbfba141f9cc24089ac30c0cdf838b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723847522131439293, guid: f5cbfba141f9cc24089ac30c0cdf838b, type: 3}
+      propertyPath: m_Size.x
+      value: 2.8920472
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723847522131439293, guid: f5cbfba141f9cc24089ac30c0cdf838b, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0259538
       objectReference: {fileID: 0}
     - target: {fileID: 8291299492910916140, guid: f5cbfba141f9cc24089ac30c0cdf838b, type: 3}
       propertyPath: chooseDirection
@@ -82767,13 +82779,6 @@ PrefabInstance:
     - target: {fileID: 1137721772643841235, guid: d9913150be52bc140a9d43dd74cc2dac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6386660481631297453, guid: d9913150be52bc140a9d43dd74cc2dac, type: 3}
-      propertyPath: 'texts.Array.data[0]'
-      value: Bees are an essential part of our ecosystems.\n The mission doesn't
-        end here. Whether you have a garden or a balcony, planting native flowers
-        helps protect your local ecosystem. \n \n And shoutout to the Guerrilla Gardeners
-        out there helping to make our world a better place.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
