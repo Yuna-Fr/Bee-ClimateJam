@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5680744978769708034}
   - component: {fileID: 8291299492910916140}
-  - component: {fileID: 5723847522131439293}
+  - component: {fileID: 1964330509910843644}
   m_Layer: 0
   m_Name: Wind
   m_TagString: Untagged
@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Wind
   chooseDirection: 1
   windStrength: 50
---- !u!70 &5723847522131439293
-CapsuleCollider2D:
+--- !u!61 &1964330509910843644
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -77,10 +77,19 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.1207073e-18, y: 0.009667055}
-  m_Size: {x: 2.0519075, y: 1.0259538}
-  m_Direction: 1
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
