@@ -12,8 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float levelSpeed = 2f;
 
     [Header("Difficulty")]
-    [SerializeField] private List<Image> hearts = new();
-    [SerializeField] private Sprite deadHeart;
+    [SerializeField] private Image heart;
 
     [Header("GameOver")]
     [SerializeField] private float gameOverFade = 2f;
@@ -32,7 +31,8 @@ public class GameManager : MonoBehaviour
         else
             Instance = this;
 
-        currentLife = hearts.Count;
+        currentLife = 2;
+        heart.fillAmount = 1f;
 
         gameoverScreen.gameObject.SetActive(false);
         victoryScreen.gameObject.SetActive(false);
@@ -49,11 +49,16 @@ public class GameManager : MonoBehaviour
     {
         if (currentLife <= 0) return; // Already dead
 
-        hearts[(currentLife-1)].sprite = deadHeart;
         currentLife--;
 
-        if (currentLife <= 0)
+        if (currentLife == 1)
+            heart.fillAmount = 0.43f;
+            
+        else if (currentLife <= 0)
+        {
+            heart.fillAmount = 0.0f;
             GameOver();
+        }
     }
 
     public void Victory()

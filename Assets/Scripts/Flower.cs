@@ -7,8 +7,13 @@ public class Flower : MonoBehaviour
 {
     [HideInInspector] public bool isPollinated = false;
     
+    [Header("Babies")]
     [SerializeField] private List<Transform> flowerBabies;
-    [SerializeField] private Vector2 babySpawnRate = new(0.2f, 0.7f);
+    [SerializeField] private Vector2 babySpawnRateBetween = new(0.2f, 0.7f);
+
+    [Header("Main Flower")]
+    [SerializeField] private SpriteRenderer mainFlower;
+    [SerializeField] private Sprite healthyFlower;
 
     private List<Vector3> babiesSizes = new();
 
@@ -24,6 +29,7 @@ public class Flower : MonoBehaviour
     public void Pollinate()
     {
         isPollinated = true;
+        mainFlower.sprite = healthyFlower;
         StartCoroutine(PollinationAnimation());
     }
 
@@ -38,7 +44,7 @@ public class Flower : MonoBehaviour
             flowerBaby.DOLocalRotate(new Vector3(0, 0, spinAxis), 1f, RotateMode.FastBeyond360).SetRelative().SetEase(Ease.OutQuad);
             flowerBaby.DOScale(babiesSizes[flowerBabies.IndexOf(flowerBaby)], 1f).SetEase(Ease.OutBack);
 
-            yield return new WaitForSeconds(Random.Range(babySpawnRate.x, babySpawnRate.y));
+            yield return new WaitForSeconds(Random.Range(babySpawnRateBetween.x, babySpawnRateBetween.y));
         }
     }
 }
