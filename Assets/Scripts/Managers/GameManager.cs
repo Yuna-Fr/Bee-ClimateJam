@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Level")]
     [SerializeField] private float levelSpeed = 2f;
+    [SerializeField] private float fadeInDelay = 2f;
+    [SerializeField] private CanvasGroup fadeBG;
 
     [Header("Difficulty")]
     [SerializeField] private Image heart;
@@ -34,8 +35,15 @@ public class GameManager : MonoBehaviour
         currentLife = 2;
         heart.fillAmount = 1f;
 
+        fadeBG.alpha = 1f;
+
         gameoverScreen.gameObject.SetActive(false);
         victoryScreen.gameObject.SetActive(false);
+    }
+
+    private void Start()
+    {
+        fadeBG.DOFade(0f, fadeInDelay * 2);
     }
 
     private void Update()
@@ -85,12 +93,14 @@ public class GameManager : MonoBehaviour
     #region GameOver Buttons Callbacks
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        fadeBG.DOFade(1f, fadeInDelay)
+            .OnComplete(() => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
     }
 
     public void LoadMenu()
     {
-        SceneManager.LoadScene("Menu");
+        fadeBG.DOFade(1f, fadeInDelay)
+            .OnComplete(() => SceneManager.LoadScene("Menu"));
     }
     #endregion
 }

@@ -8,6 +8,8 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private string sceneName;
     [SerializeField] private float changeSceneDelay = 0.4f;
+    [SerializeField] private float fadeInDelay = 1f;
+    [SerializeField] private CanvasGroup fadeBG;
 
 
     [Header("Credit Leaf")]
@@ -19,8 +21,14 @@ public class MenuManager : MonoBehaviour
     private Vector3 leafDownPos;
     private bool isCreditOpen = false;
 
-    void Start()
+    private void Awake()
     {
+        fadeBG.alpha = 1f;
+    }
+
+    private void Start()
+    {
+        fadeBG.DOFade(0f, fadeInDelay);
         Cursor.lockState = CursorLockMode.None;
         leafDownPos = creditLeaf.transform.localRotation.eulerAngles;
     }
@@ -29,13 +37,8 @@ public class MenuManager : MonoBehaviour
     
     public void OnStartButtonPressed()
     {
-        StartCoroutine(StartGameCoroutine());
-
-        IEnumerator StartGameCoroutine()
-        {
-            yield return new WaitForSeconds(changeSceneDelay);
-            SceneManager.LoadScene(sceneName);
-        }
+        fadeBG.DOFade(1f, (fadeInDelay / 1.5f))
+            .OnComplete(() => SceneManager.LoadScene(sceneName));
     }
 
     public void OnCreditsButtonPressed()

@@ -49,30 +49,6 @@ public class Wind : MonoBehaviour
             Gizmos.color = new Color(0f, 0.8f, 1f, 0.1f); // Remplissage léger
             Gizmos.DrawCube(box.offset, box.size);
         }
-        else if (col is CircleCollider2D circle)
-        {
-            Gizmos.DrawWireSphere((Vector3)circle.offset, circle.radius);
-            Gizmos.color = new Color(0f, 0.8f, 1f, 0.1f);
-            Gizmos.DrawSphere((Vector3)circle.offset, circle.radius);
-        }
-        else if (col is CapsuleCollider2D capsule)
-        {
-            float radius = (capsule.direction == CapsuleDirection2D.Vertical) ? capsule.size.x / 2f : capsule.size.y / 2f;
-            Gizmos.DrawWireCube(capsule.offset, capsule.size);
-            
-            if (capsule.direction == CapsuleDirection2D.Vertical)
-            {
-                float offsetDistance = Mathf.Max(0, (capsule.size.y / 2f) - radius);
-                Gizmos.DrawWireSphere((Vector3)capsule.offset + Vector3.up * offsetDistance, radius);
-                Gizmos.DrawWireSphere((Vector3)capsule.offset + Vector3.down * offsetDistance, radius);
-            }
-            else
-            {
-                float offsetDistance = Mathf.Max(0, (capsule.size.x / 2f) - radius);
-                Gizmos.DrawWireSphere((Vector3)capsule.offset + Vector3.right * offsetDistance, radius);
-                Gizmos.DrawWireSphere((Vector3)capsule.offset + Vector3.left * offsetDistance, radius);
-            }
-        }
 
         Gizmos.matrix = originalMatrix;
     }

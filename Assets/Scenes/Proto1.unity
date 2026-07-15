@@ -34339,6 +34339,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   levelSpeed: 2
+  fadeInDelay: 2
+  fadeBG: {fileID: 1083244591}
   heart: {fileID: 1525760564}
   gameOverFade: 1.5
   gameoverScreen: {fileID: 1080428482}
@@ -40692,6 +40694,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!225 &1083244591 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 655620540621795639, guid: a8ec01f1acacd804190ccf0aa7eb94cd, type: 3}
+  m_PrefabInstance: {fileID: 1325095729302992201}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1085714566
 GameObject:
   m_ObjectHideFlags: 0
