@@ -94,6 +94,12 @@ public class BeeController : MonoBehaviour
                 
                 score.text = pollinatedFlowersScore.ToString();
                 var parentUI = score.transform.parent.transform;
+
+                // Reset
+                parentUI.DOKill(complete: true);
+                parentUI.localRotation = Quaternion.identity;
+                parentUI.localScale = Vector3.one;
+                
                 parentUI.DOPunchScale(Vector3.one * 0.1f, 0.5f, 5, 1);
                 parentUI.DORotate(new Vector3(0, 0, 360), 0.5f, RotateMode.LocalAxisAdd).SetEase(Ease.OutBack);
             }
