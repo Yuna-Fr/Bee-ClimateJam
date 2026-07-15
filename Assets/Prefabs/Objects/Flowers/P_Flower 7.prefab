@@ -198,15 +198,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4212765521972337043, guid: 26d31fedaf18c1a40934ca6e6a80d34a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.36
+      value: 1.57
       objectReference: {fileID: 0}
     - target: {fileID: 4212765521972337043, guid: 26d31fedaf18c1a40934ca6e6a80d34a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.65
+      value: -1.44
       objectReference: {fileID: 0}
     - target: {fileID: 4972104104038163202, guid: 26d31fedaf18c1a40934ca6e6a80d34a, type: 3}
       propertyPath: m_Name
-      value: P_Flower 6
+      value: P_Flower 7
       objectReference: {fileID: 0}
     - target: {fileID: 5323489111052403689, guid: 26d31fedaf18c1a40934ca6e6a80d34a, type: 3}
       propertyPath: mainFlower
@@ -246,11 +246,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7144321650149770774, guid: 26d31fedaf18c1a40934ca6e6a80d34a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.11
+      value: -3.09
       objectReference: {fileID: 0}
     - target: {fileID: 7144321650149770774, guid: 26d31fedaf18c1a40934ca6e6a80d34a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.83
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: 7382132141435779021, guid: 26d31fedaf18c1a40934ca6e6a80d34a, type: 3}
       propertyPath: m_LocalScale.x
@@ -266,11 +266,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7382132141435779021, guid: 26d31fedaf18c1a40934ca6e6a80d34a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.58
+      value: 2.13
       objectReference: {fileID: 0}
     - target: {fileID: 7382132141435779021, guid: 26d31fedaf18c1a40934ca6e6a80d34a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.43
+      value: 1.95
       objectReference: {fileID: 0}
     - target: {fileID: 7712939663236089445, guid: 26d31fedaf18c1a40934ca6e6a80d34a, type: 3}
       propertyPath: m_Sprite
@@ -282,7 +282,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7712939663236089445, guid: 26d31fedaf18c1a40934ca6e6a80d34a, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1383823288328584123, guid: 26d31fedaf18c1a40934ca6e6a80d34a, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 998233045759995974, guid: 26d31fedaf18c1a40934ca6e6a80d34a, type: 3}
       insertIndex: 0
