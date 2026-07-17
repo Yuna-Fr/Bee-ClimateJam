@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class MenuManager : MonoBehaviour
 {
@@ -10,13 +11,16 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private float fadeInDelay = 1f;
     [SerializeField] private CanvasGroup fadeBG;
 
-
     [Header("Credit Leaf")]
     [SerializeField] private float moveDuration = 0.2f;
     [SerializeField] private Vector3 leafUpPos;
     [SerializeField] private GameObject creditLeaf;
     [SerializeField] private Image logo;
 
+    [Header("Video")]
+    [SerializeField] private string videoFileName = "Video.mp4";
+    [SerializeField] private VideoPlayer vp;
+    
     private Vector3 leafDownPos;
     private bool isCreditOpen = false;
 
@@ -27,17 +31,31 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
+        vp.loopPointReached += OnVideoFinished;
+
         fadeBG.DOFade(0f, fadeInDelay);
         Cursor.lockState = CursorLockMode.None;
         leafDownPos = creditLeaf.transform.localRotation.eulerAngles;
     }
 
-    #region Button Callbacks
-    
-    public void OnStartButtonPressed()
+    private void OnDestroy()
+    {
+        vp.loopPointReached -= OnVideoFinished;
+    }
+
+    private void OnVideoFinished(VideoPlayer source)
     {
         fadeBG.DOFade(1f, (fadeInDelay / 1.5f))
             .OnComplete(() => SceneManager.LoadScene(sceneName));
+    }
+
+    #region Button Callbacks
+
+    public void OnStartButtonPressed()
+    {
+        string videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, videoFileName);
+        vp.url = videoPath;
+        vp.Play();
     }
 
     public void OnCreditsButtonPressed()
