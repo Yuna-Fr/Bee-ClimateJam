@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] private string sceneName;
-    [SerializeField] private float changeSceneDelay = 0.4f;
     [SerializeField] private float fadeInDelay = 1f;
     [SerializeField] private CanvasGroup fadeBG;
 
