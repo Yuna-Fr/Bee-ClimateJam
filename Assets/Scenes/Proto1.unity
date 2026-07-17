@@ -12962,8 +12962,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e999e2a2864bb649801dbf2a43f3bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
-  musicIntro: {fileID: 8300000, guid: 93ae2fd260d48804cba3ed17725848e2, type: 3}
-  musicLoop: {fileID: 8300000, guid: b301b2e0e9906d54ea5c09041f169163, type: 3}
+  musicInOrder:
+  - {fileID: 8300000, guid: 93ae2fd260d48804cba3ed17725848e2, type: 3}
+  - {fileID: 8300000, guid: b301b2e0e9906d54ea5c09041f169163, type: 3}
+  - {fileID: 8300000, guid: fd0d7fc1e3ee48e4fa0c5b496f2967ac, type: 3}
+  musicLoop: {fileID: 8300000, guid: 15a0d0ade5ae3a84b9376975cfe3da8f, type: 3}
 --- !u!1 &357607791
 GameObject:
   m_ObjectHideFlags: 0
