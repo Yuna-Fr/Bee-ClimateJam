@@ -11,16 +11,18 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private CanvasGroup fadeBG;
 
     [Header("Credit Leaf")]
+    [SerializeField] private CanvasGroup mainMenu;
     [SerializeField] private float moveDuration = 0.2f;
     [SerializeField] private Vector3 leafUpPos;
     [SerializeField] private GameObject creditLeaf;
     [SerializeField] private Image logo;
 
-    [Header("Video")]
+    [Header("Video Intro")]
     [SerializeField] private string videoFileName = "Video.mp4";
     [SerializeField] private VideoPlayer vp;
     [SerializeField] private CanvasGroup video;
-    
+    [SerializeField] private CanvasGroup tuto;
+
     private Vector3 leafDownPos;
     private bool isCreditOpen = false;
 
@@ -47,7 +49,12 @@ public class MenuManager : MonoBehaviour
 
     private void OnVideoFinished(VideoPlayer source)
     {
-        OnSkipButtonPressed();
+        mainMenu.DOFade(0f, fadeInDelay)
+            .OnComplete(() => mainMenu.gameObject.SetActive(false));
+        
+        tuto.alpha = 0f;
+        tuto.gameObject.SetActive(true);
+        tuto.DOFade(1f, fadeInDelay);
     }
 
     #region Button Callbacks
