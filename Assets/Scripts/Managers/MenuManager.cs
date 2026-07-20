@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
@@ -20,6 +19,7 @@ public class MenuManager : MonoBehaviour
     [Header("Video")]
     [SerializeField] private string videoFileName = "Video.mp4";
     [SerializeField] private VideoPlayer vp;
+    [SerializeField] private CanvasGroup video;
     
     private Vector3 leafDownPos;
     private bool isCreditOpen = false;
@@ -27,6 +27,8 @@ public class MenuManager : MonoBehaviour
     private void Awake()
     {
         fadeBG.alpha = 1f;
+        video.alpha = 0;
+        video.gameObject.SetActive(false);
     }
 
     private void Start()
@@ -45,14 +47,15 @@ public class MenuManager : MonoBehaviour
 
     private void OnVideoFinished(VideoPlayer source)
     {
-        fadeBG.DOFade(1f, (fadeInDelay / 1.5f))
-            .OnComplete(() => SceneManager.LoadScene(sceneName));
+        OnSkipButtonPressed();
     }
 
     #region Button Callbacks
 
     public void OnStartButtonPressed()
     {
+        video.gameObject.SetActive(true);
+        video.DOFade(1f, 0.2f);
         string videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, videoFileName);
         vp.url = videoPath;
         vp.Play();
@@ -71,7 +74,13 @@ public class MenuManager : MonoBehaviour
     public void OnQuitButtonPressed()
     {
         Application.Quit();
-    } 
+    }
+
+    public void OnSkipButtonPressed()
+    {
+        fadeBG.DOFade(1f, (fadeInDelay / 1.5f))
+            .OnComplete(() => SceneManager.LoadScene(sceneName));
+    }
 
     #endregion
 
@@ -87,4 +96,3 @@ public class MenuManager : MonoBehaviour
         creditLeaf.transform.DOLocalRotate(leafDownPos, moveDuration);
     }
 }
-
