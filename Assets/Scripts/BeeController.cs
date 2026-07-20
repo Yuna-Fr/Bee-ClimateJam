@@ -4,11 +4,11 @@ using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
+using System.Diagnostics;
 
 public class BeeController : MonoBehaviour
 {
     public static BeeController Instance { get; private set; }
-
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
@@ -38,6 +38,9 @@ public class BeeController : MonoBehaviour
     private int nectarStock = 0;
     private int pollinatedFlowersScore = 0;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioSource Bee_fly;
+
 
     #region Base Unity Methods
     void Awake()
@@ -50,6 +53,12 @@ public class BeeController : MonoBehaviour
         energyBar.fillAmount = 100;
         energyBarSlow.fillAmount = 100;
         score.text = pollinatedFlowersScore.ToString();
+    }
+
+    void Start()
+    {
+        Bee_fly = GetComponent<AudioSource>();
+        StartCoroutine(Fade(true, Bee_fly, 1f, 1f));
     }
 
     void FixedUpdate()
@@ -186,4 +195,25 @@ public class BeeController : MonoBehaviour
         UpdateEnergyBar();
     }
     #endregion
+
+    #region Sound
+
+    public IEnumerator Fade(bool fadeIn, AudioSource Bee_Fly, float duration, float targetVolume)
+    {
+        if (!fadeIn)
+        {
+            double lengthOfSource = (double)Bee_Fly.clip.samples / Bee_Fly.clip.frequency;
+            yield return new WaitForSecondsRealtime((float)(lengthOfSource - duration));
+        }
+
+        float time = 0f;
+        float startVol = Bee_Fly.volume;
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            Bee_Fly.volume = Mathf.Lerp(startVol, targetVolume, time /duration);
+            yield return null;
+        }
+    }
+    #endregion 
 }
