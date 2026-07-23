@@ -70,6 +70,8 @@ public class Enemy : ObstacleBase
         currentState = States.Chase;
         float timer = 0f;
 
+        SoundManager.Instance.LaunchChaseMusic(chaseDuration);
+        
         // CHASE
         while (timer < chaseDuration)
         {

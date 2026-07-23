@@ -23,6 +23,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private CanvasGroup video;
     [SerializeField] private CanvasGroup tuto;
 
+    private AudioSource musicSource;
     private Vector3 leafDownPos;
     private bool isCreditOpen = false;
 
@@ -40,6 +41,8 @@ public class MenuManager : MonoBehaviour
         fadeBG.DOFade(0f, fadeInDelay);
         Cursor.lockState = CursorLockMode.None;
         leafDownPos = creditLeaf.transform.localRotation.eulerAngles;
+
+        musicSource = gameObject.GetComponent<AudioSource>();
     }
 
     private void OnDestroy()
@@ -52,6 +55,8 @@ public class MenuManager : MonoBehaviour
         mainMenu.DOFade(0f, fadeInDelay)
             .OnComplete(() => mainMenu.gameObject.SetActive(false));
         
+        musicSource.DOFade(1f, fadeInDelay * 4);
+
         tuto.alpha = 0f;
         tuto.gameObject.SetActive(true);
         tuto.DOFade(1f, fadeInDelay);
@@ -61,6 +66,8 @@ public class MenuManager : MonoBehaviour
 
     public void OnStartButtonPressed()
     {
+        musicSource.DOFade(0f, fadeInDelay);
+
         video.gameObject.SetActive(true);
         video.DOFade(1f, 0.2f);
         string videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, videoFileName);
@@ -85,6 +92,10 @@ public class MenuManager : MonoBehaviour
 
     public void OnSkipButtonPressed()
     {
+        // Fade video sound
+        DOTween.To(() => vp.GetDirectAudioVolume(0), x => vp.SetDirectAudioVolume(0, x), 0f, fadeInDelay);
+        
+        musicSource.DOFade(0f, fadeInDelay);
         fadeBG.DOFade(1f, (fadeInDelay / 1.5f))
             .OnComplete(() => SceneManager.LoadScene(sceneName));
     }

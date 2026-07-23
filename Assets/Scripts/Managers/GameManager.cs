@@ -71,20 +71,22 @@ public class GameManager : MonoBehaviour
 
     public void Victory()
     {
-        victoryScreen.gameObject.SetActive(true);
-
         stopLevel = true;
-        if (victoryScreen == null) return;
 
+        SoundManager.Instance.SwitchToEndMusic(true);
+
+        victoryScreen.gameObject.SetActive(true);
         victoryScreen.DOFade(1f, gameOverFade)
             .onComplete += () => victoryScreen.gameObject.GetComponent<VicrotyUI>().LaunchUI();
     }
 
     private void GameOver()
     {
-        gameoverScreen.gameObject.SetActive(true);
-
         stopLevel = true;
+
+        SoundManager.Instance.SwitchToEndMusic(false);
+
+        gameoverScreen.gameObject.SetActive(true);
         BeeController.Instance.DiesAnim(1f);
         gameoverScreen.DOFade(1f, gameOverFade)
             .onComplete += () => gameoverScreen.gameObject.GetComponent<GameOverUI>().LaunchGameOverUI();
@@ -93,13 +95,15 @@ public class GameManager : MonoBehaviour
     #region GameOver Buttons Callbacks
     public void RestartGame()
     {
+        SoundManager.Instance.FadeOutMusic(fadeInDelay);
         fadeBG.DOFade(1f, fadeInDelay)
             .OnComplete(() => SceneManager.LoadScene(SceneManager.GetActiveScene().name));
     }
 
     public void LoadMenu()
     {
-        fadeBG.DOFade(1f, fadeInDelay)
+        SoundManager.Instance.FadeOutMusic(fadeInDelay * 2);
+        fadeBG.DOFade(1f, fadeInDelay * 2)
             .OnComplete(() => SceneManager.LoadScene("Menu"));
     }
     #endregion
