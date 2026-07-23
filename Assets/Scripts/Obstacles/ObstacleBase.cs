@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 public class ObstacleBase : MonoBehaviour //If col is trigger is perticide otherwise is a physical obstacle
 {
+    [SerializeField] private bool isTrunk = false;
+
     private void OnTriggerEnter2D(Collider2D collision) 
     {
         if (collision.gameObject.TryGetComponent<BeeController>(out var bee))
@@ -25,5 +28,8 @@ public class ObstacleBase : MonoBehaviour //If col is trigger is perticide other
     {
         Vector2 bounceDirection = (bee.transform.position - transform.position).normalized;
         bee.TakeBounce(bounceDirection);
+        bee.PushedFeedback();
+
+        SoundManager.Instance.PlayCollision(isTrunk);
     }
 }

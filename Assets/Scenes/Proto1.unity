@@ -1983,6 +1983,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 555353758}
     m_Modifications:
+    - target: {fileID: 28481722672469547, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
+      propertyPath: isTrunk
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 269871133852815324, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2235,6 +2239,7 @@ GameObject:
   - component: {fileID: 357082724}
   - component: {fileID: 357082725}
   - component: {fileID: 357082726}
+  - component: {fileID: 357082727}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -2269,6 +2274,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e999e2a2864bb649801dbf2a43f3bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
+  flowerAlive:
+  - {fileID: 8300000, guid: d5937dd17a5027a4683df99945b6e1e5, type: 3}
+  - {fileID: 8300000, guid: 4bcb5f90be0dc4e4b88b3b85fcb01e81, type: 3}
+  - {fileID: 8300000, guid: 2df118675a550b8428c6b1f6c055bfea, type: 3}
+  flowerPop:
+  - {fileID: 8300000, guid: 64fc0087aa6d711498a42f769870d3f8, type: 3}
+  - {fileID: 8300000, guid: 5ec6a95d3917a114790d5dcacf7f0426, type: 3}
+  - {fileID: 8300000, guid: fe3990917b11ec24e80acd84251fbf29, type: 3}
+  flowerGrow:
+  - {fileID: 8300000, guid: 0e38818ed564c4245a610ee55b7ee896, type: 3}
+  - {fileID: 8300000, guid: 7ac953c6ec8a20047a0a4b8cffa4dd92, type: 3}
+  - {fileID: 8300000, guid: a12b34a8866551d49a8e44ea659cd310, type: 3}
+  branchCol:
+  - {fileID: 8300000, guid: fc3f5070380986342b7f28592ecdc956, type: 3}
+  - {fileID: 8300000, guid: 9e42e29cc90e12a4fa7a88de1896456b, type: 3}
+  - {fileID: 8300000, guid: 0a85640f55be0db419df256e61a11aa8, type: 3}
+  - {fileID: 8300000, guid: 292a54314f576ab48be4932160200b1f, type: 3}
+  trunkCol:
+  - {fileID: 8300000, guid: 12e04a52aef75b547b3d23ef11e81c15, type: 3}
+  - {fileID: 8300000, guid: 2cac59ff150d84443831fcc9a4cee447, type: 3}
+  - {fileID: 8300000, guid: 72d3745d1764f974ab179cb54f613697, type: 3}
+  - {fileID: 8300000, guid: 4b832ff4ea56e454080148dbb161b9ea, type: 3}
+  soundSource: {fileID: 357082727}
   fadeTransition: 1
   musicSource: {fileID: 357082725}
   hornetMusicSource: {fileID: 357082726}
@@ -2472,6 +2500,103 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &357082727
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357082722}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &374971837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2480,6 +2605,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 555353758}
     m_Modifications:
+    - target: {fileID: 28481722672469547, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
+      propertyPath: isTrunk
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2647715366900809676, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
       propertyPath: m_Name
       value: P_Obstacle_Branch (07)
@@ -3364,6 +3493,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 555353758}
     m_Modifications:
+    - target: {fileID: 28481722672469547, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
+      propertyPath: isTrunk
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 269871133852815324, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -3544,7 +3677,6 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
@@ -3553,14 +3685,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7646,6 +7770,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 555353758}
     m_Modifications:
+    - target: {fileID: 28481722672469547, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
+      propertyPath: isTrunk
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2647715366900809676, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
       propertyPath: m_Name
       value: P_Obstacle_Branch (13)
@@ -8107,6 +8235,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 555353758}
     m_Modifications:
+    - target: {fileID: 28481722672469547, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
+      propertyPath: isTrunk
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 269871133852815324, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -9578,6 +9710,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 555353758}
     m_Modifications:
+    - target: {fileID: 28481722672469547, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
+      propertyPath: isTrunk
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 269871133852815324, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -12016,6 +12152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc636972d16ac414cb3540fd1d863097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleBase
+  isTrunk: 0
 --- !u!1001 &1618809944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12507,6 +12644,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 555353758}
     m_Modifications:
+    - target: {fileID: 28481722672469547, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
+      propertyPath: isTrunk
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2647715366900809676, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
       propertyPath: m_Name
       value: P_Obstacle_Branch (21)
@@ -12595,6 +12736,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 555353758}
     m_Modifications:
+    - target: {fileID: 28481722672469547, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
+      propertyPath: isTrunk
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2647715366900809676, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
       propertyPath: m_Name
       value: P_Obstacle_Branch (16)
@@ -12976,6 +13121,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 555353758}
     m_Modifications:
+    - target: {fileID: 28481722672469547, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
+      propertyPath: isTrunk
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2647715366900809676, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
       propertyPath: m_Name
       value: P_Obstacle_Branch (21)
@@ -13120,6 +13269,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 555353758}
     m_Modifications:
+    - target: {fileID: 28481722672469547, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
+      propertyPath: isTrunk
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 269871133852815324, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -14120,6 +14273,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 555353758}
     m_Modifications:
+    - target: {fileID: 28481722672469547, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
+      propertyPath: isTrunk
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 269871133852815324, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -14215,6 +14372,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 555353758}
     m_Modifications:
+    - target: {fileID: 28481722672469547, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
+      propertyPath: isTrunk
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2647715366900809676, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
       propertyPath: m_Name
       value: P_Obstacle_Branch (12)
@@ -14625,6 +14786,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 555353758}
     m_Modifications:
+    - target: {fileID: 28481722672469547, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
+      propertyPath: isTrunk
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2647715366900809676, guid: 6f8215d9debd7ae419870b057cbba3c9, type: 3}
       propertyPath: m_Name
       value: P_Obstacle_Branch (18)
@@ -15688,6 +15853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc636972d16ac414cb3540fd1d863097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleBase
+  isTrunk: 1
 --- !u!114 &28481721751085958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15700,6 +15866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc636972d16ac414cb3540fd1d863097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleBase
+  isTrunk: 0
 --- !u!114 &28481723143668902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15712,6 +15879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc636972d16ac414cb3540fd1d863097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleBase
+  isTrunk: 1
 --- !u!1 &269871132893247624
 GameObject:
   m_ObjectHideFlags: 0
@@ -17238,6 +17406,22 @@ PrefabInstance:
       propertyPath: energyBarSlow
       value: 
       objectReference: {fileID: 714352738}
+    - target: {fileID: 3893419027532786819, guid: 32d92ae0b72436c4b8383e50f16cd0d6, type: 3}
+      propertyPath: barkPushed.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893419027532786819, guid: 32d92ae0b72436c4b8383e50f16cd0d6, type: 3}
+      propertyPath: 'barkPushed.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: f6ae3ae3c92df4f41aa75f8b0f94dd30, type: 3}
+    - target: {fileID: 3893419027532786819, guid: 32d92ae0b72436c4b8383e50f16cd0d6, type: 3}
+      propertyPath: 'barkPushed.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 48f883aa343f66f4bb0bd81bf8926730, type: 3}
+    - target: {fileID: 3893419027532786819, guid: 32d92ae0b72436c4b8383e50f16cd0d6, type: 3}
+      propertyPath: 'barkPushed.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 30f399e36dfde7742bd1cff568d727e3, type: 3}
     - target: {fileID: 4324235071883671505, guid: 32d92ae0b72436c4b8383e50f16cd0d6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.68
@@ -19177,8 +19361,8 @@ Transform:
   m_GameObject: {fileID: 3194927944504760409}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 345.6, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 345.6, y: -0.0125, z: 0}
+  m_LocalScale: {x: 1, y: 1.0023, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5937925942798930100}

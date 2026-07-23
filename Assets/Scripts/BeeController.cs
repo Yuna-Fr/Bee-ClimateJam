@@ -4,11 +4,11 @@ using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 public class BeeController : MonoBehaviour
 {
     public static BeeController Instance { get; private set; }
-
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
@@ -39,6 +39,18 @@ public class BeeController : MonoBehaviour
     private int pollinatedFlowersScore = 0;
 
 
+    [Header("Sounds")]
+    [SerializeField] private AudioClip barkToxic;
+    [SerializeField] private AudioClip barkStung;
+    [SerializeField] private AudioClip barkExausted;
+    [SerializeField] private List<AudioClip> barkPushed;
+    [SerializeField] private AudioClip buzzMax;
+    [SerializeField] private AudioClip buzzMid;
+    [SerializeField] private AudioClip buzzMin;
+    [SerializeField] private AudioSource buzzSource;
+    [SerializeField] private AudioSource barksSource;
+
+
     #region Base Unity Methods
     void Awake()
     {
@@ -50,6 +62,11 @@ public class BeeController : MonoBehaviour
         energyBar.fillAmount = 100;
         energyBarSlow.fillAmount = 100;
         score.text = pollinatedFlowersScore.ToString();
+    }
+
+    void Start()
+    {
+        GameManager.Instance.OnGameEnd += OnGameEnd;
     }
 
     void FixedUpdate()
@@ -86,7 +103,7 @@ public class BeeController : MonoBehaviour
         else if (collision.gameObject.CompareTag("Flower"))
         {
             var flower = collision.gameObject.GetComponent<Flower>();
-            if (!flower.isPollinated && nectarStock > 0)
+            if (flower && !flower.isPollinated && nectarStock > 0)
             {
                 nectarStock--;
                 flower.Pollinate();
@@ -109,20 +126,44 @@ public class BeeController : MonoBehaviour
     void OnDisable()
     {
         inputActions.FindActionMap("Player").Disable();
+        GameManager.Instance.OnGameEnd -= OnGameEnd;
+    }
+
+    private void OnGameEnd()
+    {
+        barksSource.DOFade(0f, 1f);
+        buzzSource.DOFade(0f,  1f)
+            .OnComplete(() => enabled = false);
     }
     #endregion
 
     #region Feedbacks
-    public void HitFeedback()
+    public void HitFeedback(bool byEnemy = false)
     {
+        barksSource.clip = byEnemy ? barkStung : barkToxic;
+        barksSource.Play();
+
         spriteRenderer.DOColor(Color.red, 0.15f)
             .OnComplete(() => spriteRenderer.DOColor(Color.white, 0.15f));
+    }
+
+    public void PushedFeedback()
+    {
+        if (Random.value < 0.2f) // 1 chance sur 3 
+        {
+            barksSource.clip = barkPushed[Random.Range(0, barkPushed.Count)];
+            barksSource.Play();
+        }
     }
 
     public void DiesAnim(float duration)
     {
         beeBody.transform.DOShakePosition(duration, 0.5f, 8, 90, false, true);
         beeBody.transform.DOScale(Vector3.zero, duration);
+
+        barksSource.DOFade(0f, duration);
+        buzzSource.DOFade(0f, duration)
+            .OnComplete(() => this.enabled = false);
     }
     #endregion
 
@@ -169,10 +210,20 @@ public class BeeController : MonoBehaviour
         energyBar.fillAmount = energyPercent;
         energyBarFillTween = energyBarSlow.DOFillAmount(energyPercent, 1f).SetEase(Ease.Linear);
 
+        // Set audio buzz based on current energy level
+        AudioClip targetBuzzClip = energy > 66 ? buzzMax : energy < 33 ? buzzMin : buzzMid;
+        if (buzzSource.clip != targetBuzzClip) 
+        {
+            buzzSource.clip = targetBuzzClip;
+            buzzSource.Play();
+        }
+        
         if (energy <= 0)
         {
             HitFeedback();
             GameManager.Instance.RemoveAHeart();
+            barksSource.clip = barkExausted;
+            barksSource.Play();
         }
     }
 

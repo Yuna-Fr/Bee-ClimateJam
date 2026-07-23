@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -26,8 +27,16 @@ public class Enemy : ObstacleBase
     private Coroutine patrolWaitCoroutine;
     
     
+    [Header("Sound")]
+    [SerializeField] private List<AudioClip> stung;
+    [SerializeField] private AudioSource barkSource;
+    [SerializeField] private AudioSource buzzSource;
+
+    
     private void Start()
     {
+        GameManager.Instance.OnGameEnd += OnGameEnd;
+
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -65,6 +74,18 @@ public class Enemy : ObstacleBase
         }
     }
 
+    private void OnDestroy()
+    {
+        GameManager.Instance.OnGameEnd -= OnGameEnd;
+    }
+
+    private void OnGameEnd()
+    {
+        barkSource.DOFade(0f, 1f);
+        buzzSource.DOFade(0f, 1f)
+            .OnComplete(()=> enabled = false);
+    }
+
     private IEnumerator ChaseAndReturnRoutine()
     {
         currentState = States.Chase;
@@ -97,9 +118,12 @@ public class Enemy : ObstacleBase
 
     protected override void OnCollisonReaction(BeeController bee)
     {
-        base.OnCollisonReaction(bee);
-        bee.HitFeedback();
+        bee.TakeBounce((bee.transform.position - transform.position).normalized);
+        bee.HitFeedback(true);
         GameManager.Instance.RemoveAHeart();
+
+        barkSource.clip = stung[Random.Range(0, stung.Count)];
+        barkSource.Play();
     }
 
     #region Patrol Logic
