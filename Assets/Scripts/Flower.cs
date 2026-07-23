@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Flower : MonoBehaviour
 {
-    [HideInInspector] public bool isPollinated = false;
+    [SerializeField] public bool isPollinated = false;
     
     [Header("Babies")]
     [SerializeField] private List<Transform> flowerBabies;
@@ -19,6 +19,12 @@ public class Flower : MonoBehaviour
 
     private void Start()
     {
+        if (isPollinated)
+        {
+            mainFlower.sprite = healthyFlower;
+            return;
+        }
+        
         foreach (Transform flowerBaby in flowerBabies)
         {
             flowerBaby.gameObject.SetActive(false);
@@ -28,6 +34,8 @@ public class Flower : MonoBehaviour
 
     public void Pollinate()
     {
+        if (isPollinated) return;
+
         isPollinated = true;
         mainFlower.sprite = healthyFlower;
         StartCoroutine(PollinationAnimation());

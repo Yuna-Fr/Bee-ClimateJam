@@ -1,25 +1,87 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    public static SoundManager Instance;
+
     [Header("Music")]
+    [SerializeField] private float fadeTransition = 1f;
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioSource hornetMusicSource;
     [SerializeField] private List<AudioClip> musicInOrder;
     [SerializeField] private AudioClip musicLoop;
+    [SerializeField] private AudioClip looseMusic;
+    [SerializeField] private AudioClip winMusic;
 
-    private AudioSource musicSource;
+    private bool chaseActive;
+    private float chaseEndTime;
+    private TweenerCore<float, float, FloatOptions> fadeTween;
 
-    void Start()
+    private void Awake()
     {
-        musicSource = gameObject.AddComponent<AudioSource>();
+        Instance = this;
+    }
+
+    private void Start()
+    {
         musicSource.playOnAwake = false;
+        musicSource.volume = 0f;
+        hornetMusicSource.volume = 0f;
+        musicSource.DOFade(1f, fadeTransition);
 
         if (musicInOrder.Count != 0) 
             StartCoroutine(PlayInOrder());
     
         else if (musicLoop != null) 
             LaunchLoopingMusic();
+    }
+
+    private void Update()
+    {
+        if (chaseActive && Time.time >= chaseEndTime)
+        {
+            chaseActive = false;
+            fadeTween?.Kill();
+            fadeTween = hornetMusicSource.DOFade(0f, fadeTransition);
+        }
+    }
+
+    #region Music Gestion
+
+    public void LaunchChaseMusic(float duration)
+    {
+        chaseEndTime = Mathf.Max(chaseEndTime, Time.time + duration);
+
+        if (!chaseActive)
+        {
+            chaseActive = true;
+
+            fadeTween?.Kill();
+            fadeTween = hornetMusicSource.DOFade(1f, 0.5f);
+        }
+    }
+
+    public void FadeOutMusic(float fadeDelay)
+    {
+        musicSource.DOFade(0f, fadeDelay);
+        hornetMusicSource.DOFade(0f, fadeDelay);
+    }
+
+    public void SwitchToEndMusic(bool isWinLoop)
+    {
+        hornetMusicSource.DOFade(0f, fadeTransition);
+        musicSource.DOFade(0f, fadeTransition).OnComplete(() =>
+        {
+            musicSource.clip = isWinLoop ? winMusic : looseMusic;
+            musicSource.loop = true;
+            musicSource.Play();
+            musicSource.DOFade(1f, fadeTransition);
+        });
     }
 
     private IEnumerator PlayInOrder()
@@ -42,4 +104,5 @@ public class SoundManager : MonoBehaviour
         musicSource.loop = true;
         musicSource.Play();
     }
+    #endregion
 }
