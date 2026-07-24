@@ -229,6 +229,7 @@ public class BeeController : MonoBehaviour
 
     private void RecoltNectar()
     {
+        SoundManager.Instance.PlayPollen();
         nectarStock++;
 
         energyBarFillTween?.Kill();

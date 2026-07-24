@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
-using NUnit.Framework;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
@@ -17,6 +16,7 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] private List<AudioClip> branchCol;
     [SerializeField] private List<AudioClip> trunkCol;
+    [SerializeField] private List<AudioClip> pollen;
     [SerializeField] private AudioSource soundSource;
 
     [Header("Music")]
@@ -67,6 +67,12 @@ public class SoundManager : MonoBehaviour
         if (soundSource.isPlaying) return;
 
         soundSource.clip = isTrunk ? trunkCol[Random.Range(0, trunkCol.Count)] : branchCol[Random.Range(0, branchCol.Count)];
+        soundSource.Play();
+    }
+
+    public void PlayPollen()
+    {
+        soundSource.clip = pollen[Random.Range(0, pollen.Count)];
         soundSource.Play();
     }
 
