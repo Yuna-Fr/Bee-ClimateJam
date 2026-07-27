@@ -9,6 +9,9 @@ public class Enemy : ObstacleBase
 {
     private enum States { Patrol, Block, Chase, Return }
 
+    [SerializeField] private Transform shadow;
+    private Vector3 shadowOffset;
+
     [Header("Detection Settings")]
     [SerializeField] private float detectionRadius = 5f;
     [SerializeField] private float chaseDuration = 1.5f;
@@ -37,6 +40,7 @@ public class Enemy : ObstacleBase
     {
         GameManager.Instance.OnGameEnd += OnGameEnd;
 
+        shadowOffset = shadow.localPosition;
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -72,6 +76,11 @@ public class Enemy : ObstacleBase
             var targetRotation = Quaternion.LookRotation(Vector3.forward, moveDirection);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
+    }
+
+    private void LateUpdate()
+    {
+        shadow.localPosition = Quaternion.Inverse(transform.rotation) * shadowOffset;
     }
 
     private void OnDestroy()
