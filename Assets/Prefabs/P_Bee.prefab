@@ -115,6 +115,98 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &5588677854938936463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 58633770262881912}
+  - component: {fileID: 4805314814366950091}
+  m_Layer: 0
+  m_Name: Shadow
+  m_TagString: Nectar
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &58633770262881912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5588677854938936463}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.9, z: 0}
+  m_LocalScale: {x: 0.13, y: -0.08272727, z: 1.1818181}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 4324235071883671505}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &4805314814366950091
+SpriteRenderer:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5588677854938936463}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 21300000, guid: 9496fd3d887891648b0bb9c00cf205cf, type: 3}
+  m_Color: {r: 0.2509804, g: 0.14901961, b: 0.039215688, a: 0.23529412}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1 &9010146766038663416
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,6 +243,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4592974328681436177}
+  - {fileID: 58633770262881912}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3893419027532786819
@@ -168,6 +261,7 @@ MonoBehaviour:
   moveSpeed: 60
   rotSpeed: 0.3
   beeBody: {fileID: 1970698150303623363}
+  beeShadow: {fileID: 5588677854938936463}
   inputActions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   rb: {fileID: 8706352293513933444}
   bounceForce: 10
@@ -181,7 +275,10 @@ MonoBehaviour:
   barkToxic: {fileID: 8300000, guid: 4f14ada198cae2f4a9a3d0421afe0a8c, type: 3}
   barkStung: {fileID: 8300000, guid: 9e074535eca6ba84bb724f4f8d5c590b, type: 3}
   barkExausted: {fileID: 8300000, guid: b4aef158f9db5634a91973e56383b4ac, type: 3}
-  barkPushed: []
+  barkPushed:
+  - {fileID: 8300000, guid: f6ae3ae3c92df4f41aa75f8b0f94dd30, type: 3}
+  - {fileID: 8300000, guid: 48f883aa343f66f4bb0bd81bf8926730, type: 3}
+  - {fileID: 8300000, guid: 30f399e36dfde7742bd1cff568d727e3, type: 3}
   buzzMax: {fileID: 8300000, guid: 276ef5e48124f394683efd4cd2573024, type: 3}
   buzzMid: {fileID: 8300000, guid: baa00e2fb73aafd498c62837fc34ed77, type: 3}
   buzzMin: {fileID: 8300000, guid: 27769eea7b71d994c82a9467bd8e01ad, type: 3}

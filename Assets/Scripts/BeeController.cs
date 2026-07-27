@@ -14,6 +14,7 @@ public class BeeController : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float rotSpeed = 0.2f;
     [SerializeField] private GameObject beeBody;
+    [SerializeField] private GameObject beeShadow;
     [SerializeField] private InputActionAsset inputActions;
     public Rigidbody2D rb;
     private InputAction moveAction;
@@ -81,6 +82,7 @@ public class BeeController : MonoBehaviour
 
                 float angle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg;
                 beeBody.transform.DOLocalRotate(new Vector3(0, 0, angle - 90), rotSpeed);
+                beeShadow.transform.DOLocalRotate(new Vector3(0, 0, angle), rotSpeed);
             }
         }
 

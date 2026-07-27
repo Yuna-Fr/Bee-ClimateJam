@@ -50,13 +50,23 @@ public class Flower : MonoBehaviour
     {
          foreach (Transform flowerBaby in flowerBabies)
         {
+            var shadow = flowerBaby.GetChild(0);
+            shadow.SetParent(transform, true); 
+            shadow.localScale = Vector3.zero;
+
             flowerBaby.localScale = Vector3.zero;
             flowerBaby.gameObject.SetActive(true);
 
+            //SCALE
+            flowerBaby.DOScale(babiesSizes[flowerBabies.IndexOf(flowerBaby)], 1f).SetEase(Ease.OutBack);
+            shadow.DOScale(babiesSizes[flowerBabies.IndexOf(flowerBaby)], 1f).SetEase(Ease.OutBack);
+            
+            //ROTATE
             float spinAxis = Random.value > 0.5f ? 90f : -90f;
             flowerBaby.DOLocalRotate(new Vector3(0, 0, spinAxis), 1f, RotateMode.FastBeyond360).SetRelative().SetEase(Ease.OutQuad);
-            flowerBaby.DOScale(babiesSizes[flowerBabies.IndexOf(flowerBaby)], 1f).SetEase(Ease.OutBack);
+            shadow.DOLocalRotate(new Vector3(0, 0, spinAxis), 1f, RotateMode.FastBeyond360).SetRelative().SetEase(Ease.OutQuad);
 
+            //SOUNDS
             var audioPop = flowerBaby.gameObject.AddComponent<AudioSource>();
             audioPop.clip = SoundManager.Instance.GetFlowerPopSound();
             audioPop.spatialBlend = 1f;
