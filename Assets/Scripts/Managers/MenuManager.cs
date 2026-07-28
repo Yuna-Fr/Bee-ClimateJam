@@ -52,7 +52,7 @@ public class MenuManager : MonoBehaviour
 
     private void OnVideoFinished(VideoPlayer source)
     {
-        mainMenu.DOFade(0f, fadeInDelay)
+        mainMenu.DOFade(0f, fadeInDelay/3)
             .OnComplete(() => mainMenu.gameObject.SetActive(false));
         
         musicSource.DOFade(1f, fadeInDelay * 4);
