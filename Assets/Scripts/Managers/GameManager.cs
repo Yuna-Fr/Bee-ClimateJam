@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     [HideInInspector] public Action OnGameEnd;
+    
 
     [Header("Level")]
     [SerializeField] private float levelSpeed = 2f;

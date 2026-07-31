@@ -129,7 +129,8 @@ public class Enemy : ObstacleBase
     {
         bee.TakeBounce((bee.transform.position - transform.position).normalized);
         bee.HitFeedback(true);
-        GameManager.Instance.RemoveAHeart();
+        bee.DamangeOnEnergy();
+        //GameManager.Instance.RemoveAHeart();
 
         barkSource.clip = stung[Random.Range(0, stung.Count)];
         barkSource.Play();

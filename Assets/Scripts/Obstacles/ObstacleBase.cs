@@ -21,7 +21,9 @@ public class ObstacleBase : MonoBehaviour //If col is trigger is perticide other
     protected virtual void OnTriggerReaction(BeeController bee)
     {
         bee.HitFeedback();
-        GameManager.Instance.RemoveAHeart();
+        bee.DamangeOnEnergy();
+
+        //GameManager.Instance.RemoveAHeart();
     }
 
     protected virtual void OnCollisonReaction(BeeController bee)

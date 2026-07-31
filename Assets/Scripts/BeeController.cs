@@ -29,15 +29,25 @@ public class BeeController : MonoBehaviour
 
 
     [Header("Ressources")]
+    [SerializeField] private int damageOnEnergy = 50;
     [SerializeField] private int energyDecreasePerSecond = 5;
     [SerializeField] private int energyGivenFromNectar = 25;
     [SerializeField] private Image energyBar;
     [SerializeField] private Image energyBarSlow;
+    [SerializeField] private Image energyBorder;
     [SerializeField] private TextMeshProUGUI score;
+    [SerializeField] private RectTransform heart;
+    [SerializeField] private Color DamageColor;
+    [SerializeField] private Color DamageBorderColor;
     private Tween energyBarFillTween = null;
     private int energy = 100;
     private int nectarStock = 0;
     private int pollinatedFlowersScore = 0;
+    private Color barColor;
+    private Color barSlowColor;
+    private Color barBorderColor;
+    private Tween heartShakeTween;
+    private Vector3 heartDefaultPos;
 
 
     [Header("Sounds")]
@@ -62,11 +72,15 @@ public class BeeController : MonoBehaviour
 
         energyBar.fillAmount = 100;
         energyBarSlow.fillAmount = 100;
+        barColor = energyBar.color;
+        barSlowColor = energyBarSlow.color;
+        barBorderColor = energyBorder.color;
         score.text = pollinatedFlowersScore.ToString();
     }
 
     void Start()
     {
+        heartDefaultPos = heart.localPosition;
         GameManager.Instance.OnGameEnd += OnGameEnd;
     }
 
@@ -142,6 +156,14 @@ public class BeeController : MonoBehaviour
     #region Feedbacks
     public void HitFeedback(bool byEnemy = false)
     {
+        //Change colors on energy bar
+        energyBar.DOKill();
+        energyBarSlow.DOKill();
+        energyBorder.DOKill();
+        energyBar.DOColor(DamageColor, 0.15f).OnComplete(() => energyBar.DOColor(barColor, 0.6f));
+        energyBarSlow.DOColor(DamageColor, 0.15f).OnComplete(() => energyBarSlow.DOColor(barSlowColor, 0.6f));
+        energyBorder.DOColor(DamageBorderColor, 0.15f).OnComplete(() => energyBorder.DOColor(barBorderColor, 0.6f));
+
         barksSource.clip = byEnemy ? barkStung : barkToxic;
         barksSource.Play();
 
@@ -167,7 +189,25 @@ public class BeeController : MonoBehaviour
         buzzSource.DOFade(0f, duration)
             .OnComplete(() => this.enabled = false);
     }
-    #endregion
+
+    private void UpdateHeartShake()
+    {
+        if (energy >= 50) // Stop shaking above 50%
+        {
+            heartShakeTween?.Kill();
+            heart.localPosition = heartDefaultPos;
+            return;
+        }
+
+        float t = 1f - (energy / 50f); // t = 0 at 50 energy and t = 1 at 0 energy
+        float strength = Mathf.Lerp(1f, 8f, t);
+        float duration = Mathf.Lerp(0.15f, 0.04f, t);
+
+        heartShakeTween?.Kill();
+        heart.localPosition = heartDefaultPos;
+        heartShakeTween = heart.DOShakeAnchorPos(duration, strength, 20, 90f, false, false).SetLoops(-1);
+    }
+        #endregion
 
     #region Movements & Physics
     private void ClampMovements() // Clamp the bee's position to screen bounds
@@ -206,11 +246,22 @@ public class BeeController : MonoBehaviour
 
     #region Energy Management
 
-    private void UpdateEnergyBar()
+    public void DamangeOnEnergy()
+    {
+        energy = Mathf.Max(energy - damageOnEnergy, 0);
+        
+        spriteRenderer.DOColor(Color.red, 0.15f)
+            .OnComplete(() => spriteRenderer.DOColor(Color.white, 0.15f));
+        
+        UpdateEnergyBar(0.1f);
+    }
+
+    private void UpdateEnergyBar(float fillDelay = 1f)
     {
         float energyPercent = (float)energy / 100f;
         energyBar.fillAmount = energyPercent;
-        energyBarFillTween = energyBarSlow.DOFillAmount(energyPercent, 1f).SetEase(Ease.Linear);
+        energyBarFillTween.Kill();
+        energyBarFillTween = energyBarSlow.DOFillAmount(energyPercent, fillDelay).SetEase(Ease.Linear);
 
         // Set audio buzz based on current energy level
         AudioClip targetBuzzClip = energy > 66 ? buzzMax : energy < 33 ? buzzMin : buzzMid;
@@ -219,10 +270,21 @@ public class BeeController : MonoBehaviour
             buzzSource.clip = targetBuzzClip;
             buzzSource.Play();
         }
+
+        UpdateHeartShake();
         
         if (energy <= 0)
         {
             HitFeedback();
+            energyBar.DOKill();
+            energyBarSlow.DOKill();
+            energyBorder.DOKill();
+            energyBar.DOColor(DamageColor, 0.15f);
+            energyBarSlow.DOColor(DamageColor, 0.15f);
+            energyBorder.DOColor(DamageBorderColor, 0.15f);
+
+            energyBarFillTween = energyBarSlow.DOFillAmount(0, fillDelay).SetEase(Ease.Linear);
+            
             GameManager.Instance.RemoveAHeart();
             barksSource.clip = barkExausted;
             barksSource.Play();

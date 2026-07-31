@@ -48,8 +48,10 @@ public class Flower : MonoBehaviour
 
     private IEnumerator PollinationAnimation()
     {
-         foreach (Transform flowerBaby in flowerBabies)
+        foreach (Transform flowerBaby in flowerBabies)
         {
+            if (flowerBaby == null) continue;
+
             var shadow = flowerBaby.GetChild(0);
             shadow.SetParent(transform, true); 
             shadow.localScale = Vector3.zero;
