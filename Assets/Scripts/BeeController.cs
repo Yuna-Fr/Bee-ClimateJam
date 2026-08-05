@@ -50,6 +50,13 @@ public class BeeController : MonoBehaviour
     private Vector3 heartDefaultPos;
 
 
+    [Header("Damage Cooldown")]
+    [SerializeField] private float damageCooldown = 1.5f;
+    [SerializeField] private bool flashSpriteOnHurt = true;
+    private bool isInvincible = false;
+    private Coroutine invincibilityCoroutine;
+
+
     [Header("Sounds")]
     [SerializeField] private AudioClip barkToxic;
     [SerializeField] private AudioClip barkStung;
@@ -59,7 +66,15 @@ public class BeeController : MonoBehaviour
     [SerializeField] private AudioClip buzzMid;
     [SerializeField] private AudioClip buzzMin;
     [SerializeField] private AudioSource buzzSource;
+    [SerializeField] private AudioSource buzzSource2;
     [SerializeField] private AudioSource barksSource;
+
+    [Header("Buzz Crossfade Settings")]
+    [SerializeField] private float buzzCrossfadeDuration = 0.25f;
+    private AudioSource activeBuzzSource;
+    private AudioSource inactiveBuzzSource;
+    private AudioClip currentBuzzClip;
+    private Coroutine buzzLoopCoroutine;
 
 
     #region Base Unity Methods
@@ -76,12 +91,22 @@ public class BeeController : MonoBehaviour
         barSlowColor = energyBarSlow.color;
         barBorderColor = energyBorder.color;
         score.text = pollinatedFlowersScore.ToString();
+
+        activeBuzzSource = buzzSource;
+        inactiveBuzzSource = buzzSource2;
+        activeBuzzSource.loop = false;
+        inactiveBuzzSource.loop = false;
     }
 
     void Start()
     {
         heartDefaultPos = heart.localPosition;
         GameManager.Instance.OnGameEnd += OnGameEnd;
+
+        // Start buzz sound and loop routine
+        AudioClip initialBuzz = energy > 66 ? buzzMax : (energy < 33 ? buzzMin : buzzMid);
+        CrossfadeBuzzTo(initialBuzz);
+        buzzLoopCoroutine = StartCoroutine(BuzzLoopRoutine());
     }
 
     void FixedUpdate()
@@ -142,13 +167,30 @@ public class BeeController : MonoBehaviour
     void OnDisable()
     {
         inputActions.FindActionMap("Player").Disable();
-        GameManager.Instance.OnGameEnd -= OnGameEnd;
+        if (GameManager.Instance != null)
+            GameManager.Instance.OnGameEnd -= OnGameEnd;
+
+        if (buzzLoopCoroutine != null)
+            StopCoroutine(buzzLoopCoroutine);
+
+        if (invincibilityCoroutine != null)
+            StopCoroutine(invincibilityCoroutine);
+
+        if (spriteRenderer != null)
+            spriteRenderer.enabled = true;
+
+        activeBuzzSource?.DOKill();
+        inactiveBuzzSource?.DOKill();
     }
 
     private void OnGameEnd()
     {
+        if (buzzLoopCoroutine != null) StopCoroutine(buzzLoopCoroutine);
+        if (invincibilityCoroutine != null) StopCoroutine(invincibilityCoroutine);
+
         barksSource.DOFade(0f, 1f);
-        buzzSource.DOFade(0f,  1f)
+        buzzSource2.DOFade(0f, 1f);
+        buzzSource.DOFade(0f, 1f)
             .OnComplete(() => enabled = false);
     }
     #endregion
@@ -173,7 +215,7 @@ public class BeeController : MonoBehaviour
 
     public void PushedFeedback()
     {
-        if (Random.value < 0.2f) // 1 chance sur 3 
+        if (Random.value < 0.2f) // 1 chance sur 5
         {
             barksSource.clip = barkPushed[Random.Range(0, barkPushed.Count)];
             barksSource.Play();
@@ -182,10 +224,14 @@ public class BeeController : MonoBehaviour
 
     public void DiesAnim(float duration)
     {
+        if (buzzLoopCoroutine != null) StopCoroutine(buzzLoopCoroutine);
+        if (invincibilityCoroutine != null) StopCoroutine(invincibilityCoroutine);
+
         beeBody.transform.DOShakePosition(duration, 0.5f, 8, 90, false, true);
         beeBody.transform.DOScale(Vector3.zero, duration);
 
         barksSource.DOFade(0f, duration);
+        buzzSource2.DOFade(0f, duration);
         buzzSource.DOFade(0f, duration)
             .OnComplete(() => this.enabled = false);
     }
@@ -207,7 +253,7 @@ public class BeeController : MonoBehaviour
         heart.localPosition = heartDefaultPos;
         heartShakeTween = heart.DOShakeAnchorPos(duration, strength, 20, 90f, false, false).SetLoops(-1);
     }
-        #endregion
+    #endregion
 
     #region Movements & Physics
     private void ClampMovements() // Clamp the bee's position to screen bounds
@@ -244,16 +290,48 @@ public class BeeController : MonoBehaviour
     }
     #endregion
 
-    #region Energy Management
+    #region Energy Management & Damage Cooldown
 
     public void DamangeOnEnergy()
     {
+        if (isInvincible) return;
+
         energy = Mathf.Max(energy - damageOnEnergy, 0);
         
-        spriteRenderer.DOColor(Color.red, 0.15f)
-            .OnComplete(() => spriteRenderer.DOColor(Color.white, 0.15f));
-        
         UpdateEnergyBar(0.1f);
+        StartInvincibility();
+    }
+
+    private void StartInvincibility()
+    {
+        if (invincibilityCoroutine != null)
+            StopCoroutine(invincibilityCoroutine);
+
+        invincibilityCoroutine = StartCoroutine(InvincibilityRoutine());
+    }
+
+    private IEnumerator InvincibilityRoutine()
+    {
+        isInvincible = true;
+
+        if (flashSpriteOnHurt && spriteRenderer != null)
+        {
+            float elapsed = 0f;
+            float flashInterval = 0.1f;
+
+            while (elapsed < damageCooldown)
+            {
+                spriteRenderer.enabled = !spriteRenderer.enabled;
+                yield return new WaitForSeconds(flashInterval);
+                elapsed += flashInterval;
+            }
+
+            spriteRenderer.enabled = true;
+        }
+        else
+            yield return new WaitForSeconds(damageCooldown);
+
+        isInvincible = false;
     }
 
     private void UpdateEnergyBar(float fillDelay = 1f)
@@ -263,25 +341,16 @@ public class BeeController : MonoBehaviour
         energyBarFillTween.Kill();
         energyBarFillTween = energyBarSlow.DOFillAmount(energyPercent, fillDelay).SetEase(Ease.Linear);
 
-        // Set audio buzz based on current energy level
-        AudioClip targetBuzzClip = energy > 66 ? buzzMax : energy < 33 ? buzzMin : buzzMid;
-        if (buzzSource.clip != targetBuzzClip) 
-        {
-            buzzSource.clip = targetBuzzClip;
-            buzzSource.Play();
-        }
+        // Set audio buzz based on current energy level with crossfade
+        AudioClip targetBuzzClip = energy > 66 ? buzzMax : (energy < 33 ? buzzMin : buzzMid);
+        if (currentBuzzClip != targetBuzzClip) 
+            CrossfadeBuzzTo(targetBuzzClip);
 
         UpdateHeartShake();
         
         if (energy <= 0)
         {
             HitFeedback();
-            energyBar.DOKill();
-            energyBarSlow.DOKill();
-            energyBorder.DOKill();
-            energyBar.DOColor(DamageColor, 0.15f);
-            energyBarSlow.DOColor(DamageColor, 0.15f);
-            energyBorder.DOColor(DamageBorderColor, 0.15f);
 
             energyBarFillTween = energyBarSlow.DOFillAmount(0, fillDelay).SetEase(Ease.Linear);
             
@@ -300,6 +369,54 @@ public class BeeController : MonoBehaviour
         energy = Mathf.Min(energy + energyGivenFromNectar, 100);
 
         UpdateEnergyBar();
+    }
+    #endregion
+
+    #region Audio Management
+    private IEnumerator BuzzLoopRoutine()
+    {
+        while (enabled)
+        {
+            if (activeBuzzSource != null && currentBuzzClip != null && activeBuzzSource.isPlaying)
+            {
+                float remainingTime = currentBuzzClip.length - activeBuzzSource.time;
+                if (remainingTime <= buzzCrossfadeDuration)
+                    CrossfadeBuzzTo(currentBuzzClip);
+            }
+            yield return null;
+        }
+    }
+
+    private void CrossfadeBuzzTo(AudioClip newClip)
+    {
+        if (newClip == null) return;
+
+        bool isInitialPlay = !activeBuzzSource.isPlaying && !inactiveBuzzSource.isPlaying;
+        currentBuzzClip = newClip;
+
+        if (isInitialPlay)
+        {
+            activeBuzzSource.clip = newClip;
+            activeBuzzSource.volume = 1f;
+            activeBuzzSource.Play();
+            return;
+        }
+
+        // Swap active and inactive sources
+        AudioSource temp = activeBuzzSource;
+        activeBuzzSource = inactiveBuzzSource;
+        inactiveBuzzSource = temp;
+
+        // Setup new active source
+        activeBuzzSource.clip = newClip;
+        activeBuzzSource.time = 0f;
+        activeBuzzSource.volume = 0f;
+        activeBuzzSource.Play();
+
+        activeBuzzSource.DOKill();
+        inactiveBuzzSource.DOKill();
+        activeBuzzSource.DOFade(1f, buzzCrossfadeDuration);
+        inactiveBuzzSource.DOFade(0f, buzzCrossfadeDuration).OnComplete(() => inactiveBuzzSource.Stop());
     }
     #endregion
 }
