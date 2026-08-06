@@ -14,6 +14,7 @@ public class LevelDressingSpawner : MonoBehaviour
     [SerializeField] private GameObject hornetPrefab;
     [SerializeField] private GameObject pesticidePrefab;
     [SerializeField] private GameObject nectarPrefab;
+    [SerializeField] private GameObject fernPrefab;
 
     [Header("Options")]
     [SerializeField] private bool spawnOnAwake = true;
@@ -55,7 +56,9 @@ public class LevelDressingSpawner : MonoBehaviour
                     break;
 
                 case LevelDressingCatalog.Kind.DecorPlant:
-                    instance = SpawnPrefab(flowerPrefab, entry, root, 0.55f);
+                    // Fougères / feuilles (import leaves) — décor pur
+                    instance = SpawnPrefab(fernPrefab != null ? fernPrefab : flowerPrefab, entry, root,
+                        fernPrefab != null ? 1f : 0.55f);
                     break;
 
                 case LevelDressingCatalog.Kind.BranchObstacle:
