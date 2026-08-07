@@ -1,39 +1,78 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] private string sceneName;
-    [SerializeField] private float changeSceneDelay = 0.4f;
-
+    [SerializeField] private float fadeInDelay = 1f;
+    [SerializeField] private CanvasGroup fadeBG;
 
     [Header("Credit Leaf")]
+    [SerializeField] private CanvasGroup mainMenu;
     [SerializeField] private float moveDuration = 0.2f;
     [SerializeField] private Vector3 leafUpPos;
     [SerializeField] private GameObject creditLeaf;
+    [SerializeField] private Image logo;
 
+    [Header("Video Intro")]
+    [SerializeField] private string videoFileName = "Video.mp4";
+    [SerializeField] private VideoPlayer vp;
+    [SerializeField] private CanvasGroup video;
+    [SerializeField] private CanvasGroup tuto;
+
+    private AudioSource musicSource;
     private Vector3 leafDownPos;
     private bool isCreditOpen = false;
 
-    void Start()
+    private void Awake()
     {
+        fadeBG.alpha = 1f;
+        video.alpha = 0;
+        video.gameObject.SetActive(false);
+    }
+
+    private void Start()
+    {
+        vp.loopPointReached += OnVideoFinished;
+
+        fadeBG.DOFade(0f, fadeInDelay);
         Cursor.lockState = CursorLockMode.None;
         leafDownPos = creditLeaf.transform.localRotation.eulerAngles;
+
+        musicSource = gameObject.GetComponent<AudioSource>();
+    }
+
+    private void OnDestroy()
+    {
+        vp.loopPointReached -= OnVideoFinished;
+    }
+
+    private void OnVideoFinished(VideoPlayer source)
+    {
+        mainMenu.DOFade(0f, fadeInDelay/3)
+            .OnComplete(() => mainMenu.gameObject.SetActive(false));
+        
+        musicSource.DOFade(1f, fadeInDelay * 4);
+
+        tuto.alpha = 0f;
+        tuto.gameObject.SetActive(true);
+        tuto.DOFade(1f, fadeInDelay);
     }
 
     #region Button Callbacks
-    
+
     public void OnStartButtonPressed()
     {
-        StartCoroutine(StartGameCoroutine());
+        musicSource.DOFade(0f, fadeInDelay);
 
-        IEnumerator StartGameCoroutine()
-        {
-            yield return new WaitForSeconds(changeSceneDelay);
-            SceneManager.LoadScene(sceneName);
-        }
+        video.gameObject.SetActive(true);
+        video.DOFade(1f, 0.2f);
+        string videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, videoFileName);
+        vp.url = videoPath;
+        vp.Play();
     }
 
     public void OnCreditsButtonPressed()
@@ -49,18 +88,29 @@ public class MenuManager : MonoBehaviour
     public void OnQuitButtonPressed()
     {
         Application.Quit();
-    } 
+    }
+
+    public void OnSkipButtonPressed()
+    {
+        // Fade video sound
+        DOTween.To(() => vp.GetDirectAudioVolume(0), x => vp.SetDirectAudioVolume(0, x), 0f, fadeInDelay);
+        
+        musicSource.DOFade(0f, fadeInDelay);
+        fadeBG.DOFade(1f, (fadeInDelay / 1.5f))
+            .OnComplete(() => SceneManager.LoadScene(sceneName));
+    }
 
     #endregion
 
     private void OnCreditOpened()
     {
+        logo.DOFade(0f, moveDuration*2 );
         creditLeaf.transform.DOLocalRotate(leafUpPos, moveDuration);
     }
 
     private void OnCreditClosed()
     {
+        logo.DOFade(1f, moveDuration*2 );
         creditLeaf.transform.DOLocalRotate(leafDownPos, moveDuration);
     }
 }
-

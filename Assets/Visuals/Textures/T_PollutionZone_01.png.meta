@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 4046e10b078b6fb4785234f98fd0afb6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -991244630865378412
+    second: T_PollutionZone_01_0
+  - first:
+      213: 4880259717042149760
+    second: T_PollutionZone_01_1
+  - first:
+      213: 7558709065490018208
+    second: T_PollutionZone_01_2
+  - first:
+      213: -7716410183682907442
+    second: T_PollutionZone_01_3
+  - first:
+      213: -634327345621660973
+    second: T_PollutionZone_01_4
+  - first:
+      213: -2059864247040771557
+    second: T_PollutionZone_01_5
+  - first:
+      213: -314826081061692694
+    second: T_PollutionZone_01_6
+  - first:
+      213: 3929386287696794131
+    second: T_PollutionZone_01_7
+  - first:
+      213: 1883006228080590125
+    second: T_PollutionZone_01_8
+  - first:
+      213: -5465057490013892221
+    second: T_PollutionZone_01_9
+  - first:
+      213: -3621584885442271980
+    second: T_PollutionZone_01_10
+  - first:
+      213: -1308950205446303674
+    second: T_PollutionZone_01_11
+  - first:
+      213: 5703974870096214699
+    second: T_PollutionZone_01_12
+  - first:
+      213: 3012258037057940629
+    second: T_PollutionZone_01_13
+  - first:
+      213: 6305000278231996374
+    second: T_PollutionZone_01_14
+  - first:
+      213: 9028912421896313119
+    second: T_PollutionZone_01_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: T_PollutionZone_01_0
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 139
+        width: 1072
+        height: 807
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49381c392446e32f0800000000000000
+      internalID: -991244630865378412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_PollutionZone_01_1
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 938
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08912fd1b5a2ab340800000000000000
+      internalID: 4880259717042149760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_PollutionZone_01_2
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 933
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0afae09e8dde5e860800000000000000
+      internalID: 7558709065490018208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_PollutionZone_01_3
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 927
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec2af5c32ddc9e490800000000000000
+      internalID: -7716410183682907442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_PollutionZone_01_4
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 945
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3da87e4d3aa6237f0800000000000000
+      internalID: -634327345621660973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_PollutionZone_01_5
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 576
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a7b958164e963e0800000000000000
+      internalID: -2059864247040771557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_PollutionZone_01_6
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 566
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aea1a48e85381abf0800000000000000
+      internalID: -314826081061692694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_PollutionZone_01_7
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 555
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3125577820cf78630800000000000000
+      internalID: 3929386287696794131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_PollutionZone_01_8
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 530
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2d77961038c12a10800000000000000
+      internalID: 1883006228080590125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_PollutionZone_01_9
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 525
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38152aefa273824b0800000000000000
+      internalID: -5465057490013892221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_PollutionZone_01_10
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 487
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4152a431cbb8dbdc0800000000000000
+      internalID: -3621584885442271980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_PollutionZone_01_11
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 497
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 640d2b729bca5dde0800000000000000
+      internalID: -1308950205446303674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_PollutionZone_01_12
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 100
+        width: 37
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baaf6d36ce6982f40800000000000000
+      internalID: 5703974870096214699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_PollutionZone_01_13
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 130
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59c67ae99b0bdc920800000000000000
+      internalID: 3012258037057940629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_PollutionZone_01_14
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 130
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d7d1c4095cdf7750800000000000000
+      internalID: 6305000278231996374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_PollutionZone_01_15
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 115
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f19dd3fa2042d4d70800000000000000
+      internalID: 9028912421896313119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      T_PollutionZone_01_0: -991244630865378412
+      T_PollutionZone_01_1: 4880259717042149760
+      T_PollutionZone_01_10: -3621584885442271980
+      T_PollutionZone_01_11: -1308950205446303674
+      T_PollutionZone_01_12: 5703974870096214699
+      T_PollutionZone_01_13: 3012258037057940629
+      T_PollutionZone_01_14: 6305000278231996374
+      T_PollutionZone_01_15: 9028912421896313119
+      T_PollutionZone_01_2: 7558709065490018208
+      T_PollutionZone_01_3: -7716410183682907442
+      T_PollutionZone_01_4: -634327345621660973
+      T_PollutionZone_01_5: -2059864247040771557
+      T_PollutionZone_01_6: -314826081061692694
+      T_PollutionZone_01_7: 3929386287696794131
+      T_PollutionZone_01_8: 1883006228080590125
+      T_PollutionZone_01_9: -5465057490013892221
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,754 @@
+fileFormatVersion: 2
+guid: 9e48bdd3ad322dc4b99fb2c0d96ddef9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 656574308576161412
+    second: PollenBar_Heart_01_0
+  - first:
+      213: 341800614976775097
+    second: PollenBar_Heart_01_1
+  - first:
+      213: 6305955106189599462
+    second: PollenBar_Heart_01_2
+  - first:
+      213: 8353986805138950869
+    second: PollenBar_Heart_01_3
+  - first:
+      213: -3821810173893697265
+    second: PollenBar_Heart_01_4
+  - first:
+      213: 3131638665213585036
+    second: PollenBar_Heart_01_5
+  - first:
+      213: -5051635840131339440
+    second: PollenBar_Heart_01_6
+  - first:
+      213: -1214043383839924262
+    second: PollenBar_Heart_01_7
+  - first:
+      213: 6755925984803762573
+    second: PollenBar_Heart_01_8
+  - first:
+      213: -1635055267306112864
+    second: PollenBar_Heart_01_9
+  - first:
+      213: 7639639607102766917
+    second: PollenBar_Heart_01_10
+  - first:
+      213: 8651663303388484726
+    second: PollenBar_Heart_01_11
+  - first:
+      213: -4831340232580717652
+    second: PollenBar_Heart_01_12
+  - first:
+      213: 8688806449907056635
+    second: PollenBar_Heart_01_13
+  - first:
+      213: -8562989941516795847
+    second: PollenBar_Heart_01_14
+  - first:
+      213: 6893259644408429115
+    second: PollenBar_Heart_01_15
+  - first:
+      213: 8543303227717809441
+    second: PollenBar_Heart_01_16
+  - first:
+      213: 469834428102594079
+    second: PollenBar_Heart_01_17
+  - first:
+      213: -2334386499502638388
+    second: PollenBar_Heart_01_18
+  - first:
+      213: 8025312264166782477
+    second: PollenBar_Heart_01_19
+  - first:
+      213: 2802410546901249121
+    second: PollenBar_Heart_01_20
+  - first:
+      213: -6549898128995276000
+    second: PollenBar_Heart_01_21
+  - first:
+      213: 5538584302431183614
+    second: PollenBar_Heart_01_22
+  - first:
+      213: -2701044164747000087
+    second: PollenBar_Heart_01_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_0
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 811
+        width: 44
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48e645fdade9c1900800000000000000
+      internalID: 656574308576161412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_1
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 822
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b363bf29d15eb400800000000000000
+      internalID: 341800614976775097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_2
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 818
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e2edf932c0438750800000000000000
+      internalID: 6305955106189599462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_3
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 821
+        width: 36
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da8b9aecb25fe370800000000000000
+      internalID: 8353986805138950869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_4
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 809
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f01a71a45e336fac0800000000000000
+      internalID: -3821810173893697265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_5
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 643
+        width: 97
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c862fec16c0d57b20800000000000000
+      internalID: 3131638665213585036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_6
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 777
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05be656d7fbf4e9b0800000000000000
+      internalID: -5051635840131339440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_7
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 805
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adfde4489f9d62fe0800000000000000
+      internalID: -1214043383839924262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_8
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 807
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d813f0583eed1cd50800000000000000
+      internalID: 6755925984803762573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_9
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 807
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a87614b5ed1f49e0800000000000000
+      internalID: -1635055267306112864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_10
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 748
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54f7d510fb3750a60800000000000000
+      internalID: 7639639607102766917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_11
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 733
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 674d0ca9fe1e01870800000000000000
+      internalID: 8651663303388484726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_12
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 688
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca329ffe7a1a3fcb0800000000000000
+      internalID: -4831340232580717652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_13
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 692
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bff35d05e67d49870800000000000000
+      internalID: 8688806449907056635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_14
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 696
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93006a054062a2980800000000000000
+      internalID: -8562989941516795847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_15
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 685
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3aff71ef17c9af50800000000000000
+      internalID: 6893259644408429115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_16
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 690
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12571907509ef8670800000000000000
+      internalID: 8543303227717809441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_17
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 679
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1ecd4e4cef258600800000000000000
+      internalID: 469834428102594079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_18
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 677
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cca7da8c8d79a9fd0800000000000000
+      internalID: -2334386499502638388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_19
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 674
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d063f3dfbf2af5f60800000000000000
+      internalID: 8025312264166782477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_20
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 673
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16c6bda6b8924e620800000000000000
+      internalID: 2802410546901249121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_21
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 664
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02bad32ca561a15a0800000000000000
+      internalID: -6549898128995276000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_22
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 664
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef227f014110ddc40800000000000000
+      internalID: 5538584302431183614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PollenBar_Heart_01_23
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 449
+        width: 188
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e60d9594a6f38ad0800000000000000
+      internalID: -2701044164747000087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PollenBar_Heart_01_0: 656574308576161412
+      PollenBar_Heart_01_1: 341800614976775097
+      PollenBar_Heart_01_10: 7639639607102766917
+      PollenBar_Heart_01_11: 8651663303388484726
+      PollenBar_Heart_01_12: -4831340232580717652
+      PollenBar_Heart_01_13: 8688806449907056635
+      PollenBar_Heart_01_14: -8562989941516795847
+      PollenBar_Heart_01_15: 6893259644408429115
+      PollenBar_Heart_01_16: 8543303227717809441
+      PollenBar_Heart_01_17: 469834428102594079
+      PollenBar_Heart_01_18: -2334386499502638388
+      PollenBar_Heart_01_19: 8025312264166782477
+      PollenBar_Heart_01_2: 6305955106189599462
+      PollenBar_Heart_01_20: 2802410546901249121
+      PollenBar_Heart_01_21: -6549898128995276000
+      PollenBar_Heart_01_22: 5538584302431183614
+      PollenBar_Heart_01_23: -2701044164747000087
+      PollenBar_Heart_01_3: 8353986805138950869
+      PollenBar_Heart_01_4: -3821810173893697265
+      PollenBar_Heart_01_5: 3131638665213585036
+      PollenBar_Heart_01_6: -5051635840131339440
+      PollenBar_Heart_01_7: -1214043383839924262
+      PollenBar_Heart_01_8: 6755925984803762573
+      PollenBar_Heart_01_9: -1635055267306112864
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

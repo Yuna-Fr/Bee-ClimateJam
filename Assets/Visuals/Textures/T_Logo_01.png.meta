@@ -1,0 +1,1118 @@
+fileFormatVersion: 2
+guid: 7c7edd4817b0fbe40be2875598c8d484
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4343404304658512532
+    second: T_Logo_01_0
+  - first:
+      213: 1317556075930070180
+    second: T_Logo_01_1
+  - first:
+      213: 26413261701694634
+    second: T_Logo_01_2
+  - first:
+      213: -2739957917391570432
+    second: T_Logo_01_3
+  - first:
+      213: -1947132085293191639
+    second: T_Logo_01_4
+  - first:
+      213: -2687346881646723013
+    second: T_Logo_01_5
+  - first:
+      213: -8042204011901821566
+    second: T_Logo_01_6
+  - first:
+      213: -468290104908435761
+    second: T_Logo_01_7
+  - first:
+      213: 5235208286944776838
+    second: T_Logo_01_8
+  - first:
+      213: 8394949384546666251
+    second: T_Logo_01_9
+  - first:
+      213: -1620968561169942002
+    second: T_Logo_01_10
+  - first:
+      213: -7426891166263715746
+    second: T_Logo_01_11
+  - first:
+      213: -7877397595268095807
+    second: T_Logo_01_12
+  - first:
+      213: 6101844141299012186
+    second: T_Logo_01_13
+  - first:
+      213: -76168794384230348
+    second: T_Logo_01_14
+  - first:
+      213: -7373541170547330850
+    second: T_Logo_01_15
+  - first:
+      213: -1189886616842822730
+    second: T_Logo_01_16
+  - first:
+      213: 5673396727728541170
+    second: T_Logo_01_17
+  - first:
+      213: 7773034015613014023
+    second: T_Logo_01_18
+  - first:
+      213: 364350453181648809
+    second: T_Logo_01_19
+  - first:
+      213: 2752141293560483681
+    second: T_Logo_01_20
+  - first:
+      213: 6443163015778816600
+    second: T_Logo_01_21
+  - first:
+      213: 3218442935970053535
+    second: T_Logo_01_22
+  - first:
+      213: 6121801365081879273
+    second: T_Logo_01_23
+  - first:
+      213: -3918771458961732398
+    second: T_Logo_01_24
+  - first:
+      213: -1465680107789165394
+    second: T_Logo_01_25
+  - first:
+      213: -960851551858757309
+    second: T_Logo_01_26
+  - first:
+      213: -6205689356020170197
+    second: T_Logo_01_27
+  - first:
+      213: -5984950176666252093
+    second: T_Logo_01_28
+  - first:
+      213: -400912616313976461
+    second: T_Logo_01_29
+  - first:
+      213: -4349927702899061189
+    second: T_Logo_01_30
+  - first:
+      213: -6463394501118187437
+    second: T_Logo_01_31
+  - first:
+      213: -4291447062719735657
+    second: T_Logo_01_32
+  - first:
+      213: 2504349960303755383
+    second: T_Logo_01_33
+  - first:
+      213: 4770121841550361617
+    second: T_Logo_01_34
+  - first:
+      213: 4403319275004882064
+    second: T_Logo_01_35
+  - first:
+      213: -3686333567738876805
+    second: T_Logo_01_36
+  - first:
+      213: 8626112116134940228
+    second: T_Logo_01_37
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: T_Logo_01_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 1215
+        width: 571
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c654de81cc029b3c0800000000000000
+      internalID: -4343404304658512532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_1
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 1214
+        width: 374
+        height: 552
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ac28753546e84210800000000000000
+      internalID: 1317556075930070180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_2
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 1716
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa4c619b8b6dd5000800000000000000
+      internalID: 26413261701694634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_3
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 1707
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00a3b528ac6b9f9d0800000000000000
+      internalID: -2739957917391570432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_4
+      rect:
+        serializedVersion: 2
+        x: 1898
+        y: 1659
+        width: 39
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92e655d4fa56af4e0800000000000000
+      internalID: -1947132085293191639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_5
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 1204
+        width: 181
+        height: 489
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b308133df30a4bad0800000000000000
+      internalID: -2687346881646723013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_6
+      rect:
+        serializedVersion: 2
+        x: 1942
+        y: 1622
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28dde538f0a546090800000000000000
+      internalID: -8042204011901821566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_7
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 1603
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fce2a1571ac4089f0800000000000000
+      internalID: -468290104908435761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_8
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 1215
+        width: 234
+        height: 382
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 682568c133237a840800000000000000
+      internalID: 5235208286944776838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_9
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 1595
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b07c945acf9d08470800000000000000
+      internalID: 8394949384546666251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_10
+      rect:
+        serializedVersion: 2
+        x: 1958
+        y: 1578
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0ab36f8ea92189e0800000000000000
+      internalID: -1620968561169942002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_11
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 1562
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e585d5965d16ee890800000000000000
+      internalID: -7426891166263715746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_12
+      rect:
+        serializedVersion: 2
+        x: 1963
+        y: 1548
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c067839f9cdda290800000000000000
+      internalID: -7877397595268095807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_13
+      rect:
+        serializedVersion: 2
+        x: 1966
+        y: 1538
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a521de4eaea1ea450800000000000000
+      internalID: 6101844141299012186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_14
+      rect:
+        serializedVersion: 2
+        x: 1967
+        y: 1527
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43812c392e461fef0800000000000000
+      internalID: -76168794384230348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_15
+      rect:
+        serializedVersion: 2
+        x: 1969
+        y: 1509
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed0fec04f5beba990800000000000000
+      internalID: -7373541170547330850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_16
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 1489
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bb97102d6cac7fe0800000000000000
+      internalID: -1189886616842822730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_17
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 1211
+        width: 201
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fd8f12d344fbbe40800000000000000
+      internalID: 5673396727728541170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_18
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 1191
+        width: 188
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70054aff04d5fdb60800000000000000
+      internalID: 7773034015613014023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_19
+      rect:
+        serializedVersion: 2
+        x: 1574
+        y: 1192
+        width: 189
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9af05a78ece6e0500800000000000000
+      internalID: 364350453181648809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_20
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 1458
+        width: 8
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16f4b5ecce1913620800000000000000
+      internalID: 2752141293560483681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_21
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 1443
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8525e6120a6ba6950800000000000000
+      internalID: 6443163015778816600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_22
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 1134
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9d3c585cc43aac20800000000000000
+      internalID: 3218442935970053535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_23
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 1130
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e2f43728e105f450800000000000000
+      internalID: 6121801365081879273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_24
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 535
+        width: 575
+        height: 629
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dc85a0ee1abd99c0800000000000000
+      internalID: -3918771458961732398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_25
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 203
+        width: 423
+        height: 823
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eacdedc15bbd8abe0800000000000000
+      internalID: -1465680107789165394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_26
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 928
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3417399ba9e5aa2f0800000000000000
+      internalID: -960851551858757309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_27
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 293
+        width: 102
+        height: 636
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b22cefbe866f0e9a0800000000000000
+      internalID: -6205689356020170197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_28
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 297
+        width: 103
+        height: 602
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cc8561268f21fca0800000000000000
+      internalID: -5984950176666252093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_29
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 525
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37902ae791caf6af0800000000000000
+      internalID: -400912616313976461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_30
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 286
+        width: 227
+        height: 615
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3e02161dc3f1a3c0800000000000000
+      internalID: -4349927702899061189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_31
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 305
+        width: 70
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35823ad12f86d46a0800000000000000
+      internalID: -6463394501118187437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_32
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 295
+        width: 184
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 798523e22a7b174c0800000000000000
+      internalID: -4291447062719735657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_33
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 286
+        width: 176
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7704b21350d31c220800000000000000
+      internalID: 2504349960303755383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_34
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 203
+        width: 205
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11401fcaa80e23240800000000000000
+      internalID: 4770121841550361617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_35
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 273
+        width: 171
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09ceb430d8bbb1d30800000000000000
+      internalID: 4403319275004882064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_36
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 236
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c6353b62387dcc0800000000000000
+      internalID: -3686333567738876805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: T_Logo_01_37
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 232
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44e8aea344b16b770800000000000000
+      internalID: 8626112116134940228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      T_Logo_01_0: -4343404304658512532
+      T_Logo_01_1: 1317556075930070180
+      T_Logo_01_10: -1620968561169942002
+      T_Logo_01_11: -7426891166263715746
+      T_Logo_01_12: -7877397595268095807
+      T_Logo_01_13: 6101844141299012186
+      T_Logo_01_14: -76168794384230348
+      T_Logo_01_15: -7373541170547330850
+      T_Logo_01_16: -1189886616842822730
+      T_Logo_01_17: 5673396727728541170
+      T_Logo_01_18: 7773034015613014023
+      T_Logo_01_19: 364350453181648809
+      T_Logo_01_2: 26413261701694634
+      T_Logo_01_20: 2752141293560483681
+      T_Logo_01_21: 6443163015778816600
+      T_Logo_01_22: 3218442935970053535
+      T_Logo_01_23: 6121801365081879273
+      T_Logo_01_24: -3918771458961732398
+      T_Logo_01_25: -1465680107789165394
+      T_Logo_01_26: -960851551858757309
+      T_Logo_01_27: -6205689356020170197
+      T_Logo_01_28: -5984950176666252093
+      T_Logo_01_29: -400912616313976461
+      T_Logo_01_3: -2739957917391570432
+      T_Logo_01_30: -4349927702899061189
+      T_Logo_01_31: -6463394501118187437
+      T_Logo_01_32: -4291447062719735657
+      T_Logo_01_33: 2504349960303755383
+      T_Logo_01_34: 4770121841550361617
+      T_Logo_01_35: 4403319275004882064
+      T_Logo_01_36: -3686333567738876805
+      T_Logo_01_37: 8626112116134940228
+      T_Logo_01_4: -1947132085293191639
+      T_Logo_01_5: -2687346881646723013
+      T_Logo_01_6: -8042204011901821566
+      T_Logo_01_7: -468290104908435761
+      T_Logo_01_8: 5235208286944776838
+      T_Logo_01_9: 8394949384546666251
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

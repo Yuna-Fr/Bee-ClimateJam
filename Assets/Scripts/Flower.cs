@@ -5,15 +5,27 @@ using UnityEngine;
 
 public class Flower : MonoBehaviour
 {
-    [HideInInspector] public bool isPollinated = false;
+    [SerializeField] public bool isPollinated = false;
     
+    [Header("Babies")]
     [SerializeField] private List<Transform> flowerBabies;
-    [SerializeField] private Vector2 babySpawnRate = new(0.2f, 0.7f);
+    [SerializeField] private Vector2 babySpawnRateBetween = new(0.2f, 0.7f);
+
+    [Header("Main Flower")]
+    [SerializeField] private SpriteRenderer mainFlower;
+    [SerializeField] private Sprite healthyFlower;
+    [SerializeField] private AudioSource audioSource;
 
     private List<Vector3> babiesSizes = new();
 
     private void Start()
     {
+        if (isPollinated)
+        {
+            mainFlower.sprite = healthyFlower;
+            return;
+        }
+        
         foreach (Transform flowerBaby in flowerBabies)
         {
             flowerBaby.gameObject.SetActive(false);
@@ -23,19 +35,51 @@ public class Flower : MonoBehaviour
 
     public void Pollinate()
     {
+        if (isPollinated) return;
+
         isPollinated = true;
+
+        audioSource.clip = SoundManager.Instance.GetFlowerAliveSound();
+        audioSource.Play();
+        mainFlower.sprite = healthyFlower;
+        
         StartCoroutine(PollinationAnimation());
     }
 
     private IEnumerator PollinationAnimation()
     {
-         foreach (Transform flowerBaby in flowerBabies)
+        foreach (Transform flowerBaby in flowerBabies)
         {
+            if (flowerBaby == null) continue;
+
+            var shadow = flowerBaby.GetChild(0);
+            shadow.SetParent(transform, true); 
+            shadow.localScale = Vector3.zero;
+
             flowerBaby.localScale = Vector3.zero;
             flowerBaby.gameObject.SetActive(true);
-            flowerBaby.DOScale(babiesSizes[flowerBabies.IndexOf(flowerBaby)], 1f).SetEase(Ease.OutBack);
 
-            yield return new WaitForSeconds(Random.Range(babySpawnRate.x, babySpawnRate.y));
+            //SCALE
+            flowerBaby.DOScale(babiesSizes[flowerBabies.IndexOf(flowerBaby)], 1f).SetEase(Ease.OutBack);
+            shadow.DOScale(babiesSizes[flowerBabies.IndexOf(flowerBaby)], 1f).SetEase(Ease.OutBack);
+            
+            //ROTATE
+            float spinAxis = Random.value > 0.5f ? 90f : -90f;
+            flowerBaby.DOLocalRotate(new Vector3(0, 0, spinAxis), 1f, RotateMode.FastBeyond360).SetRelative().SetEase(Ease.OutQuad);
+            shadow.DOLocalRotate(new Vector3(0, 0, spinAxis), 1f, RotateMode.FastBeyond360).SetRelative().SetEase(Ease.OutQuad);
+
+            //SOUNDS
+            var audioPop = flowerBaby.gameObject.AddComponent<AudioSource>();
+            audioPop.clip = SoundManager.Instance.GetFlowerPopSound();
+            audioPop.spatialBlend = 1f;
+            audioPop.Play();
+
+            var audioGrow = flowerBaby.gameObject.AddComponent<AudioSource>();
+            audioGrow.clip = SoundManager.Instance.GetFlowerGrowSound();
+            audioGrow.spatialBlend = 1f;
+            audioGrow.Play();
+
+            yield return new WaitForSeconds(Random.Range(babySpawnRateBetween.x, babySpawnRateBetween.y));
         }
     }
 }
