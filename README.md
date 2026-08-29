@@ -95,3 +95,5 @@ Pour ajouter de nouvelles fleurs vous pouvez choisir le type dans les `Prefabs >
 Dans la scène, la fleur principale apparaît terne tant qu'elle n'est pas pollinisée. Ses enfants (les BabyFlowers) n'apparaîtront qu'après la pollinisation. L'inspecteur vous permet d'ajouter ou de retirer des BabyFlowers à votre convenance. Vous pouvez également configurer leur délai d'apparition (`Spawn Rate`) en définissant une plage aléatoire comprise entre X et Y secondes.
 
 ![Fleur](Documentation_Images/image-3.png)
+
+### Merci d'avoir lu !
