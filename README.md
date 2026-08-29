@@ -8,7 +8,7 @@ Il s'agit d'un *runner* 2D en vue du dessus. Le joueur incarne une abeille sauva
 
 Jouer sur itch.io : [The Last Pollinator](https://opalyassia.itch.io/the-last-pollinator)
 
-![PrezMenu](image-5.png)
+![PrezMenu](Documentation_Images/image-5.png)
 
 ### **Utilisation de :**
 - Unity 6.5
@@ -79,19 +79,19 @@ flowchart
 Les frelons peuvent soit garder un point fixe, soit patrouiller. Pour activer la patrouille, cochez `IsPatroller` dans l'inspecteur, puis renseignez des positions invisibles ou des objets existants (comme des fleurs) pour que le frelon se déplace entre ces repères. Des lignes bleues apparaissent dans l'éditeur pour vous aider à visualiser le chemin de patrouille.
 La zone rouge représente la zone de détection qui déclenche la chasse. Ces paramètres sont ajustables directement dans l'inspecteur.
 
-![Frelon](image-1.png)
+![Frelon](Documentation_Images/image-1.png)
 
 
 ### **Vents**
 Pour configurer les zones de vent, il suffit de modifier la forme et la taille du `Collider`. Ensuite, dans l'inspecteur, vous pouvez régler la force et l'angle du vent qui poussera le joueur.
 
-![ZoneDeVent](image-2.png)
+![ZoneDeVent](Documentation_Images/image-2.png)
 
 ### **Fleurs**
 Pour ajouter de nouvelles fleurs vous pouvez choisir le type dans les `Prefabs > Objets > Flowers`.
 
-![ChoixDesFleurs](image-4.png)
+![ChoixDesFleurs](Documentation_Images/image-4.png)
 
 Dans la scène, la fleur principale apparaît terne tant qu'elle n'est pas pollinisée. Ses enfants (les BabyFlowers) n'apparaîtront qu'après la pollinisation. L'inspecteur vous permet d'ajouter ou de retirer des BabyFlowers à votre convenance. Vous pouvez également configurer leur délai d'apparition (`Spawn Rate`) en définissant une plage aléatoire comprise entre X et Y secondes.
 
-![Fleur](image-3.png)
+![Fleur](Documentation_Images/image-3.png)
